@@ -1,0 +1,26 @@
+p {
+    font-family: Arial;
+    font-size: 20px;
+}
+
+li {
+    font-family: Arial;
+    font-size: 18px;
+}
+
+body{
+    padding: 0px 40px 10px 40px;
+}
+
+.bgpagina {
+    background-color: #9cd1ff;
+}
+
+.encabezado{
+    font-size: 80px;
+    text-align: center;
+}
+
+.hindex {
+    font-size: 40px;
+}
