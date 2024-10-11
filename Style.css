@@ -26,14 +26,18 @@ body{
     font-size: 40px;
 }
 
-head {
-    font-family: "Euclid Circular A", "Poppins";
-    background: #12161f;
-    color: white;
-    margin: 0;
-    height: 2vh;
-    display: grid;
-    place-items: center;
+:root {
+    --color-primary: #2f67ec;
+}
+
+menu {
+font-family: "Euclid Circular A", "Poppins";
+background: #12161f;
+color: white;
+margin: 0;
+height: fit-content;
+display: grid;
+place-items: center;
 }
 
 nav {
@@ -47,6 +51,7 @@ nav {
 }
 
 nav .item {
+    color: white;
     font-size: 0.8rem;
     display: inline-block;
     position: relative;
@@ -58,6 +63,7 @@ nav .item {
     line-height: 60px;
     text-align: center;
 }
+
 
 .dropdown {
     overflow: hidden;
@@ -87,7 +93,7 @@ nav .item {
     background: #254fb5;
 }
 
-.underline:hover {
+.underline {
     height: 6px;
     background: var(--color-primary);
     position: absolute;
@@ -95,6 +101,7 @@ nav .item {
     width: 25%;
     z-index: 1;
     pointer-events: none;
+    transition: 0.35s;
 
 }
 
@@ -123,8 +130,9 @@ box-sizing: border-box;
 }
 
 .container {
-max-width: 800px;
+max-width: 650px;
 margin: 0 auto;
+height: fit-content;
 }
 
 footer {
@@ -223,43 +231,43 @@ color: rgb(255 255 255 / 40%);
 }
 
 @media (width > 530px) {
-footer article {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 40px 30px;
-    margin: -70px 40px 20px;
-    min-height: 140px;
-    width: auto;
-}
+    footer article {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 40px 30px;
+        margin: -70px 40px 20px;
+        min-height: 140px;
+        width: auto;
+    }
 
-footer article h2 {
-    font-size: 24px;
-}
+    footer article h2 {
+        font-size: 24px;
+    }
 
-footer section {
-    margin-bottom: 50px;
-}
+    footer section {
+        margin-bottom: 50px;
+    }
 
-footer section img {
-    margin: 0 0 30px;
-}
+    footer section img {
+        margin: 0 0 30px;
+    }
 
-footer section ul {
-    grid-template-columns: repeat(4, 1fr);
-    padding-right: 0;
-    place-items: start;
-    text-align: left;
-}
+    footer section ul {
+        grid-template-columns: repeat(4, 1fr);
+        padding-right: 0;
+        place-items: start;
+        text-align: left;
+    }
 
-.socials {
-    top: 37px;
-    left: 216px;
-    bottom: auto;
-    font-size: 18px;
-    gap: 3vw;
-    translate: 0;
-    padding-left: 24px;
-    border-left: 1px solid rgb(255 255 255 / 20%);
-}
+    .socials {
+        top: 37px;
+        left: 216px;
+        bottom: auto;
+        font-size: 18px;
+        gap: 3vw;
+        translate: 0;
+        padding-left: 24px;
+        border-left: 1px solid rgb(255 255 255 / 20%);
+    }
 }
