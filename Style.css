@@ -9,6 +9,7 @@ li {
 }
 
 body{
+    font-family: "Euclid Circular A", "Poppins";
     padding: 0px 40px 10px 40px;
 }
 
@@ -25,39 +26,240 @@ body{
     font-size: 40px;
 }
 
-
 head {
+    font-family: "Euclid Circular A", "Poppins";
+    background: #12161f;
+    color: white;
+    margin: 0;
+    height: 2vh;
+    display: grid;
+    place-items: center;
+}
 
-    width: 100%;
-    height: 100%;
+nav {
+    position: relative;
+    background: #1f2635;
+    font-weight: 400;
+    font-size: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    
-    background: #2A363B;
-    background: linear-gradient(
-      135deg,
-      #2A363B 25%,
-      #1a1a1a 25%,
-      #1a1a1a 50%,
-      #2A363B 50%,
-      #2A363B 75%,
-      #1a1a1a 75%,
-      #1a1a1a
-    );
-    background-size: 40px 40px;
-  
+    padding: 0;
+    width: 80%;
+}
 
-    animation: move 4s linear infinite;
-  }
-  
-  @keyframes move {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 40px 40px;
-    }
-  }
-  
+nav .item {
+    font-size: 0.8rem;
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+    cursor: pointer;
+    z-index: 5;
+    min-width: 25%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.dropdown {
+    overflow: hidden;
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    width: 100%;
+    left: 0;
+    top: 62px;
+}
+.dropdown > div {
+    transform: translate(0, -100%);
+    transition: all 0.5s 0.1s;
+    position: relative;
+}
+
+.dropdown a {
+    display: block;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: var(--color-primary);
+}
+
+.dropdown a:hover {
+    background: #254fb5;
+}
+
+.underline:hover {
+    height: 6px;
+    background: var(--color-primary);
+    position: absolute;
+    bottom: 0;
+    width: 25%;
+    z-index: 1;
+    pointer-events: none;
+
+}
+
+nav .item:hover > .dropdown > div {
+    transform: translate(0);
+}
+
+nav .item:nth-child(1):hover ~ .underline {
+    transform: translate(0, 0);
+}
+
+nav .item:nth-child(2):hover ~ .underline {
+    transform: translate(100%, 0);
+}
+
+nav .item:nth-child(3):hover ~ .underline {
+    transform: translate(200%, 0);
+}
+
+nav .item:nth-child(4):hover ~ .underline {
+    transform: translate(300%, 0);
+}
+
+* {
+box-sizing: border-box;
+}
+
+.container {
+max-width: 800px;
+margin: 0 auto;
+}
+
+footer {
+position: fixed;
+left: 0;
+bottom: 0;
+right: 0;
+padding-bottom: 20px;
+background: #121212;
+color: #f9f9f9;
+}
+
+footer article {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+margin: 20px auto;
+max-height: 3px;
+width: 70vw;
+padding: 20px 30px 40px;
+border-radius: 16px;
+background: #6200ee;
+}
+
+footer article h2 {
+font-size: 22px;
+font-weight: 400;
+text-align: center;
+color: rgb(255 255 255 / 86%);
+}
+
+footer article button {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 10px;
+padding: 0 20px 0 24px;
+background: #121212;
+border: 0;
+border-radius: 30px;
+white-space: nowrap;
+color: #f9f9f9;
+font-family: inherit;
+font-size: 16px;
+}
+
+footer section {
+padding: 0 80px;
+}
+
+footer section {
+position: relative;
+padding-top: 30px;
+margin-bottom: 100px;
+}
+
+footer section img {
+display: block;
+height: 32px;
+margin: 0 auto 30px;
+}
+
+footer section h3 {
+color: rgb(255 255 255 / 40%);
+font-weight: 400;
+font-size: 13px;
+}
+
+footer section ul {
+list-style: none;
+padding: 0;
+margin: 0;
+display: grid;
+gap: 30px;
+grid-template-columns: repeat(2, 1fr);
+place-items: center;
+text-align: center;
+}
+
+footer section ul li a {
+display: block;
+margin-bottom: 10px;
+color: rgb(255 255 255 / 90%);
+}
+
+.socials {
+position: absolute;
+left: 50%;
+bottom: -60px;
+translate: -50% 0;
+display: flex;
+gap: 24px;
+font-size: 20px;
+color: rgb(255 255 255 / 40%);
+}
+
+@media (width > 530px) {
+footer article {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px 30px;
+    margin: -70px 40px 20px;
+    min-height: 140px;
+    width: auto;
+}
+
+footer article h2 {
+    font-size: 24px;
+}
+
+footer section {
+    margin-bottom: 50px;
+}
+
+footer section img {
+    margin: 0 0 30px;
+}
+
+footer section ul {
+    grid-template-columns: repeat(4, 1fr);
+    padding-right: 0;
+    place-items: start;
+    text-align: left;
+}
+
+.socials {
+    top: 37px;
+    left: 216px;
+    bottom: auto;
+    font-size: 18px;
+    gap: 3vw;
+    translate: 0;
+    padding-left: 24px;
+    border-left: 1px solid rgb(255 255 255 / 20%);
+}
+}
