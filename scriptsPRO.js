@@ -1,3 +1,4 @@
+// Experimentación y pruebas con .js (sujeto a cambios en el futuro)
 document.addEventListener("DOMContentLoaded", function() {
     // Selecciona todos los artículos (funciona para productos y paquetes)
     const items = document.querySelectorAll("article");
