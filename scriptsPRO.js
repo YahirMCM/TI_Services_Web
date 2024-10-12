@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     botones.forEach(boton => {
         boton.addEventListener("click", function() {
-            // Selecciona la descripción adicional asociada al botón
+            // Selecciona la descripción adicional asociada al botón y el artículo completo
             const descripcion = boton.previousElementSibling;  // Selecciona el párrafo antes del botón
+            const articulo = boton.closest("article");  // Selecciona el artículo padre
 
             if (descripcion.style.display === "block") {
                 descripcion.style.opacity = "0";
@@ -14,12 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     descripcion.style.display = "none";
                 }, 300);  // Añade un retraso para ocultar después de la animación
                 boton.textContent = "Ver más detalles";  // Cambia el texto del botón
+                articulo.classList.remove("resaltado");  // Remueve la clase resaltado
             } else {
                 descripcion.style.display = "block";
                 setTimeout(() => {
                     descripcion.style.opacity = "1";
                 }, 10);  // Permite que la animación suceda
                 boton.textContent = "Ocultar detalles";  // Cambia el texto del botón
+                articulo.classList.add("resaltado");  // Añade la clase resaltado
             }
         });
 

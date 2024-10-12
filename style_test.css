@@ -100,3 +100,7 @@ footer section ul li a {
     margin-bottom: 10px;
     color: rgb(255 255 255 / 90%);
 }
+
+.resaltado {
+    background-color: gainsboro;
+}
