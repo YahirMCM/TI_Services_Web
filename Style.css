@@ -26,6 +26,10 @@ body{
     font-size: 40px;
 }
 
+.copyright {
+    font-size: 14px;
+}
+
 :root {
     --color-primary: #2f67ec;
 }
