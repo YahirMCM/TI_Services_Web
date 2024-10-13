@@ -1,144 +1,239 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_test.css">
-    <title>Productos y Servicios - Soluciones TI</title>
-</head>
-<body>
-    <!-- MARTIN -->
-    <nav id="links">
-        <ul>
-            <li><a href="index.html">INICIO</a></li>
-            <li><a href="productos.html">PRODUCTOS</a></li>
-            <li><a href="paquetes.html">PAQUETES</a></li>
-            <li><a href="novedades.html">NOVEDADES</a></li>
-            <li><a href="contactanos.html">CONTÁCTANOS</a></li>
-        </ul>
-    </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet"
+        />
+        <link rel="stylesheet" href="Style.css">
+        <title>Productos y Servicios - Soluciones TI</title>
+    </head>
+    <menu>
+        <h1>DTT</h1>
+        <h2 class="encabezado">Dream Team Technologies</h2>
 
-    <h1>Nuestros Productos y Servicios</h1>
+        <nav>
+            <a class="item", href="index.html">Home</a>
+            <a class="item", href="novedades.html">Novedades</a>
+            <div class="item">
+            <a class="item", href="productos.html">Productos</a>
+            <div class="dropdown">
+                <div>
+                <a href="productos.html#serviciosNube">Servicios en Nube</a>
+                <a href="productos.html#seguridadRed">Seguridad</a>
+                <a href="productos.html#serviciosCE">Correo Electonico</a>
+                <a href="productos.html#presentacionInfo">Presentación de Información</a>
+                <a href="productos.html#desarrolloSoftware">Software</a>
+                <a href="productos.html#mantenimientoHardware">Matenimiento</a>
+                </div>
+            </div>
+            </div>
+            <div class="item">
+            <a class="item", href="paquetes.html">Paquetes</a>
+            <div class="dropdown">
+                <div>
+                <a href="paquetes.html#paqueteBase">Paquete Basico</a>
+                <a href="paquetes.html#paqueteEmpresa">Paquete Empresarial</a>
+                <a href="paquetes.html#paquetePremium">Paquete Premium</a>
+                </div>
+            </div>
+            </div>
+            <a class="item", href="contactanos.html"> Contacto</a>
+            <div class="underline"></div>
+        </nav>
+        <br>
+    </menu>
 
-    <section id="introduccion">
-        <p>Explora nuestras soluciones tecnológicas, desde servicios en la nube hasta mantenimiento de hardware. Encuentra todo lo que tu empresa necesita en un solo lugar.</p>
-    </section>
-    
-    <section id="productos">
-        <article id="serviciosNube">
-            <h2>Servicios en la Nube</h2>
-            <p>Te ofrecemos almacenamiento y procesamiento en la nube, escalable según las necesidades de tu empresa.</p>
-            <ul>
-                <li>Almacenamiento seguro</li>
-                <li>Acceso desde cualquier lugar</li>
-                <li>Escalabilidad flexible</li>
-            </ul>
-            <p><strong>Precio:</strong> $2,200 MXN/mes por 500 GB</p>
-            <p class="descripcion-adicional">Este servicio incluye almacenamiento seguro en la nube con acceso desde cualquier dispositivo, en cualquier lugar del mundo. Perfecto para empresas que requieren acceso rápido a sus datos y necesitan espacio de almacenamiento adicional según crecen. También incluye medidas de seguridad avanzadas para proteger la integridad de tus datos.</p>
-            <button class="ver-mas">Ver más detalles</button>
-        </article>
+    <body>
+        <!-- MARTIN -->
+        <h1>Nuestros Productos y Servicios</h1>
+        <br>
+
+        <section id="introduccion">
+            <p>Explora nuestras soluciones tecnológicas, desde servicios en la nube hasta mantenimiento de hardware. Encuentra todo lo que tu empresa necesita en un solo lugar.</p>
+        </section>
         
-        <article id="seguridadRed">
-            <h2>Seguridad de Red (Firewall)</h2>
-            <p>Protección avanzada para tu red con un firewall personalizado.</p>
-            <ul>
-                <li>Monitoreo constante</li>
-                <li>Protección contra amenazas</li>
-                <li>Cortafuegos adaptable</li>
-            </ul>
-            <p><strong>Precio:</strong> $3,500 MXN/mes</p>
-            <p class="descripcion-adicional">Nuestro servicio de seguridad de red incluye un firewall adaptable a las necesidades de tu empresa. Se implementa un sistema de monitoreo 24/7 para protegerte de amenazas externas y garantizar el funcionamiento seguro de tu infraestructura tecnológica. Ideal para empresas que manejan información confidencial.</p>
-            <button class="ver-mas">Ver más detalles</button>
-        </article>
-
-        <article id="serviciosCE">
-            <h2>Servicios de Correo Electrónico</h2>
-            <p>Correos electrónicos personalizados y gestión completa para tu empresa.</p>
-            <ul>
-                <li>Dominios corporativos</li>
-                <li>Soporte técnico</li>
-                <li>Disponibilidad garantizada</li>
-            </ul>
-            <p><strong>Precio:</strong> $1,500 MXN/mes (hasta 50 cuentas)</p>
-            <p class="descripcion-adicional">Este servicio de correo electrónico incluye la gestión de correos electrónicos corporativos con dominios personalizados. Garantizamos la disponibilidad y el soporte técnico 24/7 para asegurar que la comunicación de tu empresa sea fluida y segura.</p>
-            <button class="ver-mas">Ver más detalles</button>
-        </article>
-
-        <article id="presentacionInfo">
-            <h2>Presentación de Información</h2>
-            <p>Crea tableros interactivos para visualizar tus datos de forma eficiente.</p>
-            <ul>
-                <li>Tableros personalizados</li>
-                <li>Datos en tiempo real</li>
-                <li>Integración con múltiples fuentes</li>
-            </ul>
-            <p><strong>Precio:</strong> $3,000 MXN/proyecto</p>
-            <p class="descripcion-adicional">Nuestro servicio de Power BI te permite crear tableros interactivos personalizados, proporcionando visualización y análisis de datos en tiempo real. Ideal para empresas que necesitan consolidar múltiples fuentes de datos y obtener insights precisos para mejorar la toma de decisiones.</p>
-            <button class="ver-mas">Ver más detalles</button>
-        </article>
-
-        <article id="desarrolloSoftware">
-            <h2>Desarrollo de Software</h2>
-            <p>Desarrollamos aplicaciones personalizadas para satisfacer las necesidades específicas de tu empresa.</p>
-            <ul>
-                <li>Aplicaciones web y móviles</li>
-                <li>Soluciones a medida</li>
-                <li>Soporte continuo</li>
-            </ul>
-            <p><strong>Precio:</strong> Desde $12,000 MXN/proyecto</p>
-            <p class="descripcion-adicional">Creamos soluciones de software personalizadas, desde aplicaciones web hasta móviles, adaptadas a las necesidades de tu empresa. Nos encargamos del desarrollo completo, pruebas y soporte continuo para asegurar que tu software funcione de manera eficiente y escalable.</p>
-            <button class="ver-mas">Ver más detalles</button>
-        </article>
-
-        <article id="mantenimientoHardware">
-            <h2>Mantenimiento de Hardware</h2>
-            <p>Realizamos mantenimiento preventivo y correctivo de tus equipos, asegurando su funcionamiento óptimo.</p>
-            <ul>
-                <li>Reparación y optimización</li>
-                <li>Mantenimiento preventivo</li>
-                <li>Soporte técnico 24/7</li>
-            </ul>
-            <p><strong>Precio:</strong> $1,000 MXN por equipo/mantenimiento</p>
-            <p class="descripcion-adicional">Ofrecemos servicios de mantenimiento tanto preventivo como correctivo, asegurando el rendimiento continuo de tu infraestructura tecnológica. Ideal para evitar fallos inesperados y prolongar la vida útil de tus equipos.</p>
-            <button class="ver-mas">Ver más detalles</button>
-        </article>
-
-        <footer class="footer">
-            <section>
-                <ul class="menu">
-                    <li class="elemento_menu">
-                        <h3 href="" class="iconos_menu">Paquetes</h3>
-                            <a>Paquete 1</a>
-                            <a>Paquete 2</a>
-                            <a>Paquete 3</a>
-                            <a>Paquete 4</a>
-                    </li>
-                    <li class="elemento_menu">
-                        <a href="" class="iconos_menu">Productos</a>
-                            <a>Paquete 1</a>
-                            <a>Paquete 2</a>
-                            <a>Paquete 3</a>
-                            <a>Paquete 4</a>
-                    </li>
-                    <li class="elemento_menu">
-                        <a href="" class="iconos_menu">Novedades</a>
-                            <a>Paquete 1</a>
-                            <a>Paquete 2</a>
-                            <a>Paquete 3</a>
-                            <a>Paquete 4</a>
-                    </li>
-                    <li class="elemento_menu">
-                        <a href="" class="iconos_menu">Contacto</a>
-                            <a>Paquete 1</a>
-                            <a>Paquete 2</a>
-                            <a>Paquete 3</a>
-                            <a>Paquete 4</a>
-                    </li>
+        <section id="productos">
+            <article id="serviciosNube">
+                <h2>Servicios en la Nube</h2>
+                <p>Te ofrecemos almacenamiento y procesamiento en la nube, escalable según las necesidades de tu empresa.</p>
+                <ul>
+                    <li>Almacenamiento seguro</li>
+                    <li>Acceso desde cualquier lugar</li>
+                    <li>Escalabilidad flexible</li>
                 </ul>
+                <p><strong>Precio:</strong> $2,200 MXN/mes por 500 GB</p>
+                <p class="descripcion-adicional">Este servicio incluye almacenamiento seguro en la nube con acceso desde cualquier dispositivo, en cualquier lugar del mundo. Perfecto para empresas que requieren acceso rápido a sus datos y necesitan espacio de almacenamiento adicional según crecen. También incluye medidas de seguridad avanzadas para proteger la integridad de tus datos.</p>
+                <button class="ver-mas">Ver más detalles</button>
+            </article>
+            
+            <article id="seguridadRed">
+                <h2>Seguridad de Red (Firewall)</h2>
+                <p>Protección avanzada para tu red con un firewall personalizado.</p>
+                <ul>
+                    <li>Monitoreo constante</li>
+                    <li>Protección contra amenazas</li>
+                    <li>Cortafuegos adaptable</li>
+                </ul>
+                <p><strong>Precio:</strong> $3,500 MXN/mes</p>
+                <p class="descripcion-adicional">Nuestro servicio de seguridad de red incluye un firewall adaptable a las necesidades de tu empresa. Se implementa un sistema de monitoreo 24/7 para protegerte de amenazas externas y garantizar el funcionamiento seguro de tu infraestructura tecnológica. Ideal para empresas que manejan información confidencial.</p>
+                <button class="ver-mas">Ver más detalles</button>
+            </article>
+
+            <article id="serviciosCE">
+                <h2>Servicios de Correo Electrónico</h2>
+                <p>Correos electrónicos personalizados y gestión completa para tu empresa.</p>
+                <ul>
+                    <li>Dominios corporativos</li>
+                    <li>Soporte técnico</li>
+                    <li>Disponibilidad garantizada</li>
+                </ul>
+                <p><strong>Precio:</strong> $1,500 MXN/mes (hasta 50 cuentas)</p>
+                <p class="descripcion-adicional">Este servicio de correo electrónico incluye la gestión de correos electrónicos corporativos con dominios personalizados. Garantizamos la disponibilidad y el soporte técnico 24/7 para asegurar que la comunicación de tu empresa sea fluida y segura.</p>
+                <button class="ver-mas">Ver más detalles</button>
+            </article>
+
+            <article id="presentacionInfo">
+                <h2>Presentación de Información</h2>
+                <p>Crea tableros interactivos para visualizar tus datos de forma eficiente.</p>
+                <ul>
+                    <li>Tableros personalizados</li>
+                    <li>Datos en tiempo real</li>
+                    <li>Integración con múltiples fuentes</li>
+                </ul>
+                <p><strong>Precio:</strong> $3,000 MXN/proyecto</p>
+                <p class="descripcion-adicional">Nuestro servicio de Power BI te permite crear tableros interactivos personalizados, proporcionando visualización y análisis de datos en tiempo real. Ideal para empresas que necesitan consolidar múltiples fuentes de datos y obtener insights precisos para mejorar la toma de decisiones.</p>
+                <button class="ver-mas">Ver más detalles</button>
+            </article>
+
+            <article id="desarrolloSoftware">
+                <h2>Desarrollo de Software</h2>
+                <p>Desarrollamos aplicaciones personalizadas para satisfacer las necesidades específicas de tu empresa.</p>
+                <ul>
+                    <li>Aplicaciones web y móviles</li>
+                    <li>Soluciones a medida</li>
+                    <li>Soporte continuo</li>
+                </ul>
+                <p><strong>Precio:</strong> Desde $12,000 MXN/proyecto</p>
+                <p class="descripcion-adicional">Creamos soluciones de software personalizadas, desde aplicaciones web hasta móviles, adaptadas a las necesidades de tu empresa. Nos encargamos del desarrollo completo, pruebas y soporte continuo para asegurar que tu software funcione de manera eficiente y escalable.</p>
+                <button class="ver-mas">Ver más detalles</button>
+            </article>
+
+            <article id="mantenimientoHardware">
+                <h2>Mantenimiento de Hardware</h2>
+                <p>Realizamos mantenimiento preventivo y correctivo de tus equipos, asegurando su funcionamiento óptimo.</p>
+                <ul>
+                    <li>Reparación y optimización</li>
+                    <li>Mantenimiento preventivo</li>
+                    <li>Soporte técnico 24/7</li>
+                </ul>
+                <p><strong>Precio:</strong> $1,000 MXN por equipo/mantenimiento</p>
+                <p class="descripcion-adicional">Ofrecemos servicios de mantenimiento tanto preventivo como correctivo, asegurando el rendimiento continuo de tu infraestructura tecnológica. Ideal para evitar fallos inesperados y prolongar la vida útil de tus equipos.</p>
+                <button class="ver-mas">Ver más detalles</button>
+                <br>
+                <br>
+                <br>
+            </article>
+
+            <br>
+            <br>
+            <br>
+        </section>
+        <script src="scriptsPRO.js"></script>
+        <br>
+        <br>
+        <br>
+<br>
+        <div id="footer">
+            <div class="background">
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="75%"
+                height="100%"
+                viewBox="0 0 1600 900"
+              >
+                <defs>
+                  <path
+                    id="wave"
+                    fill="rgba(105, 27, 252, 0.6)"
+                    d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+            s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z"
+                  />
+                </defs>
+                <g>
+                  <use xlink:href="#wave" opacity=".4">
+                    <animateTransform
+                      attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      dur="8s"
+                      calcMode="spline"
+                      values="270 230; -334 180; 270 230"
+                      keyTimes="0; .5; 1"
+                      keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                      repeatCount="indefinite"
+                    />
+                  </use>
+                  <use xlink:href="#wave" opacity=".6">
+                    <animateTransform
+                      attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      dur="6s"
+                      calcMode="spline"
+                      values="-270 230;243 220;-270 230"
+                      keyTimes="0; .6; 1"
+                      keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                      repeatCount="indefinite"
+                    />
+                  </use>
+                  <use xlink:href="#wave" opacty=".9">
+                    <animateTransform
+                      attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      dur="4s"
+                      calcMode="spline"
+                      values="0 230;-140 200;0 230"
+                      keyTimes="0; .4; 1"
+                      keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                      repeatCount="indefinite"
+                    />
+                  </use>
+                </g>
+              </svg>
+            </div>
+            <section class="foot">
+              <ul class="socials">
+                <li><a class="fa-brands fa-x-twitter"></a></li>
+                <li><a class="fa-brands fa-facebook"></a></li>
+                <li><a class="fa-brands fa-linkedin"></a></li>
+              </ul>
+              <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="novedades.html">Novedades</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="paquetes.html">Paquetes</a></li>
+                <li><a href="contactanos.html">Contacto</a></li>
+              </ul>
+              <p class="legal">&copy; 2024 DTT. Todos los derechos reservados.</p>
             </section>
-            <p class="texto">&copy; 2024 DTT. Todos los derechos reservados. </p>
-        </footer>
-    </section>
-    <script src="scriptsPRO.js"></script>
-</body>
+        </div>
+    </body>
 </html>
