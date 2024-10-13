@@ -1,30 +1,7 @@
-p {
-    font-family: Arial;
-    font-size: 20px;
-}
+body {
+    justify-content: center;
 
-li {
-    font-family: Arial;
-    font-size: 18px;
-}
-
-
-
-.encabezado{
-    font-size: 80px;
-    text-align: center;
-}
-
-.hindex {
-    font-size: 40px;
-}
-
-.copyright {
-    font-size: 14px;
-}
-
-:root {
-    --color-primary: #2f67ec;
+    background-color: #EBE7E7;
 }
 
 menu {
@@ -122,95 +99,53 @@ nav .item:nth-child(4):hover ~ .underline {
     transform: translate(300%, 0);
 }
 
-/* body {
-    background-color: #9cd1ff;
-    font-family: "Euclid Circular A", "Poppins";
-  } */
-
-body {
-margin: 0;
-background-color: #9cd1ff;
-font-family: "Euclid Circular A", "Poppins";
-}
-  
-/* html,
-body {
-height: 100%;
-} */
-
-.background {
-position: absolute;
-z-index: -1;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-}
-
-ul {
-display: flex;
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-.socials {
-gap: 20px;
-}
-
-.socials a {
-font-size: 24px;
-}
-
-.links {
-gap: 10px;
-}
-
-.legal {
-font-size: 12px;
-margin: 0;
-}
 
 svg {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-transform: scaleY(3) scaleX(2.25);
-transform-origin: bottom;
-box-sizing: border-box;
-display: block;
-pointer-events: none;
+width: 256px;
+height: 256px;
+justify-content: center;
 }
 
-#footer {
-position: fixed;
-left: 0;
-bottom: 0;
-display: flex;
-width: 100%;
-height: 370px;
+/* SMOKE */
+#smoke-1 {
+stroke-dasharray: 0, 10;
+animation: smoke 6s ease infinite;
 }
 
-.foot {
-display: flex;
-flex-direction: column;
-justify-content: flex-end;
-gap: 30px;
-padding-bottom: 80px;
-padding-left: 60px;
-width: 100%;
+#smoke-2 {
+stroke-dasharray: 0, 10;
+animation: smoke 6s 0.5s ease infinite;
 }
 
-@media (width > 420px) {
-section {
-    align-items: center;
-    padding-left: 0;
-    gap: 20px;
+@keyframes smoke {
+0% { stroke-dasharray: 0, 10; }
+50% { stroke-dasharray: 10, 0; }
+100% { stroke-dasharray: 10, 0; opacity: 0; }
 }
 
-.links {
-    gap: 20px;
+/* WRITING */
+#line-1 {
+opacity: 0;
+animation: writing 0.5s linear forwards;
 }
+
+#line-2 {
+opacity: 0;
+animation: writing 0.5s 1s linear forwards;
 }
+
+#line-3 {
+opacity: 0;
+animation: writing 0.5s 1.5s linear forwards;
+}
+
+#line-4 {
+opacity: 0;
+animation: writing 0.5s 2s linear forwards;
+}
+
+@keyframes writing {
+0% { width: 0px; opacity: 1;}
+100% { width: 14px; opacity: 1;}
+}
+
