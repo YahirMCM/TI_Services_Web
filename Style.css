@@ -181,7 +181,7 @@ top: 0;
 left: 0;
 width: 61.5%;
 height: 100%;
-transform: scaleY(2.5) scaleX(2.25);
+transform: scaleY(2) scaleX(2.25);
 transform-origin: bottom;
 box-sizing: border-box;
 display: block;
