@@ -179,7 +179,7 @@ svg {
 position: absolute;
 top: 0;
 left: 0;
-width: 110%;
+width: 61.5%;
 height: 120%;
 transform: scaleY(3) scaleX(2.25);
 transform-origin: bottom;
@@ -189,7 +189,7 @@ pointer-events: none;
 }
 
 #footer {
-position: fixed;
+position: relative;
 left: 0;
 bottom: 0;
 display: flex;
