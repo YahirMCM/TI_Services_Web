@@ -9,7 +9,7 @@ p {
     font-size: 20px;
 }
 
-.encabezado{
+.encabezado {
     font-size: 80px;
     text-align: center;
 }
@@ -25,8 +25,6 @@ p {
 :root {
     --color-primary: #2f67ec;
 }
-
-
 
 menu {
     font-family: "Euclid Circular A", "Poppins";
@@ -62,7 +60,6 @@ nav .item {
     line-height: 60px;
     text-align: center;
 }
-
 
 .dropdown {
     overflow: hidden;
@@ -104,7 +101,6 @@ nav .item {
     z-index: 1;
     pointer-events: none;
     transition: 0.35s;
-
 }
 
 nav .item:hover > .dropdown > div {
@@ -130,7 +126,6 @@ nav .item:nth-child(4):hover ~ .underline {
 nav .item:nth-child(5):hover ~ .underline {
     transform: translate(400%, 0);
 }
-
 
 .background {
     position: absolute;
@@ -198,11 +193,11 @@ svg {
 }
 
 @media (width > 420px) {
-section {
-    align-items: center;
-    padding-left: 0;
-    gap: 20px;
-}
+    section {
+        align-items: center;
+        padding-left: 0;
+        gap: 20px;
+    }
 
     .links {
         gap: 20px;
@@ -229,4 +224,42 @@ button.ver-mas:hover {
     margin: 0 auto;
     width: 500px;
     height: 150px;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#introduccion p {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#paquetes ul {
+    text-align: center;
+    padding: 0;
+}
+
+#paquetes li {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#paquetes p, 
+#paquetes button {
+    text-align: center;
+}
+
+#paquetes strong {
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+}
+
+#paquetes button.ver-mas {
+    display: block;
+    margin: 10px auto;
 }
