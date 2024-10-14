@@ -30,3 +30,30 @@ document.addEventListener("DOMContentLoaded", function() {
         descripcion.style.opacity = "0";
     });
 });
+
+// Creacion del carrito de compras (a falta de probarlo)
+let carrito = [];
+
+function agregarAlCarrito(paquete, precio) {
+    carrito.push({ paquete, precio });
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    let carritoContenido = document.getElementById("carrito-contenido");
+    carritoContenido.innerHTML = "";
+
+    carrito.forEach((item, index) => {
+        let carritoItem = document.createElement("div");
+        carritoItem.innerHTML = `${item.paquete} - $${item.precio} MXN <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+        carritoContenido.appendChild(carritoItem);
+    });
+
+    let total = carrito.reduce((sum, item) => sum + item.precio, 0);
+    document.getElementById("total-carrito").innerText = `Total: $${total} MXN`;
+}
+
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1); 
+    actualizarCarrito();
+}

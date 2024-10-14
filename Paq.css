@@ -264,3 +264,35 @@ h1 {
     display: block;
     margin: 10px auto;
 }
+
+/* Carrito de compras (a falta de probarlo) */
+#carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#carrito h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#carrito-contenido div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+#total-carrito {
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
