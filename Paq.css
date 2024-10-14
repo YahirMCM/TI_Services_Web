@@ -224,3 +224,10 @@ button.ver-mas {
 button.ver-mas:hover {
     background-color: #3700b3;
 }
+
+#paquetes img {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    height: 150px;
+}
