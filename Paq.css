@@ -1,8 +1,7 @@
 body {
     margin: 0;
-    background-color: #f4f4f9;
-    font-family: 'Poppins', 'Euclid Circular A', sans-serif;
-    padding: 20px;
+    background-color: #9cd1ff;
+    font-family: "Euclid Circular A", "Poppins";
 }
 
 p {
@@ -12,10 +11,6 @@ p {
 
 .encabezado {
     font-size: 80px;
-    text-align: center;
-}
-
-h1, h2 {
     text-align: center;
 }
 
@@ -32,7 +27,7 @@ h1, h2 {
 }
 
 menu {
-    font-family: 'Euclid Circular A', 'Poppins';
+    font-family: "Euclid Circular A", "Poppins";
     background: #12161f;
     color: white;
     margin: 0;
@@ -75,7 +70,6 @@ nav .item {
     left: 0;
     top: 62px;
 }
-
 .dropdown > div {
     transform: translate(0, -100%);
     transition: all 0.5s 0.1s;
@@ -83,7 +77,7 @@ nav .item {
 }
 
 .dropdown a {
-    font-family: 'Euclid Circular A', 'Poppins';
+    font-family: "Euclid Circular A", "Poppins";
     display: block;
     padding: 0;
     width: 100%;
@@ -155,7 +149,7 @@ ul {
 }
 
 .links a {
-    font-family: 'Euclid Circular A', 'Poppins';
+    font-family: "Euclid Circular A", "Poppins";
     gap: 10px;
     color: #E8E8E8;
     text-decoration: wavy;
@@ -167,36 +161,36 @@ ul {
 }
 
 svg {
-    position: bottom;
-    top: 0;
-    left: 0;
-    width: 61.5%;
-    height: 100%;
-    transform: scaleY(2) scaleX(2.25);
-    transform-origin: bottom;
-    box-sizing: border-box;
-    display: block;
-    pointer-events: none;
+position: bottom;
+top: 0;
+left: 0;
+width: 61.5%;
+height: 100%;
+transform: scaleY(2) scaleX(2.25);
+transform-origin: bottom;
+box-sizing: border-box;
+display: block;
+pointer-events: none;
 }
 
 #footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    width: 100%;
-    height: 480px;
-    padding-left: 0;
+position: relative;
+left: 0;
+bottom: 0;
+display: flex;
+width: 100%;
+height: 480px;
+padding-left: 0;
 }
 
 .foot {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 30px;
-    padding-bottom: 15px;
-    padding-left: 60px;
-    width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+gap: 30px;
+padding-bottom: 15px;
+padding-left: 60px;
+width: 100%;
 }
 
 @media (width > 420px) {
@@ -212,27 +206,7 @@ svg {
     }
 }
 
-#paquetes {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-article {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
-    text-align: center;
-}
-
-button {
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-}
-
-button.ver-mas, button.agregar-carrito {
+button.ver-mas {
     background-color: #6200ee;
     color: white;
     border: none;
@@ -246,20 +220,13 @@ button.ver-mas:hover {
     background-color: #3700b3;
 }
 
-button.agregar-carrito {
-    background-color: #ff6600;
-}
-
-button.agregar-carrito:hover {
-    background-color: #cc5200;
-}
-
 #paquetes img {
     display: block;
     margin: 0 auto;
     width: 500px;
     height: 150px;
 }
+
 
 h1 {
     text-align: center;
@@ -282,7 +249,7 @@ h1 {
     font-size: 1.2em;
 }
 
-#paquetes p,
+#paquetes p, 
 #paquetes button {
     text-align: center;
 }
@@ -298,6 +265,7 @@ h1 {
     margin: 10px auto;
 }
 
+/* Carrito de compras (a falta de probarlo) */
 #carrito {
     position: fixed;
     top: 20px;
@@ -327,22 +295,4 @@ h1 {
     text-align: center;
     font-weight: bold;
     margin-top: 10px;
-}
-
-button.eliminar-todo {
-    background-color: #cc0000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-button.eliminar-todo:hover {
-    background-color: #b30000;
 }

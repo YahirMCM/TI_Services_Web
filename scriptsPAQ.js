@@ -1,3 +1,4 @@
+// Experimentación y pruebas con .js (sujeto a cambios en el futuro)
 document.addEventListener("DOMContentLoaded", function() {
     const botones = document.querySelectorAll(".ver-mas");
 
@@ -30,54 +31,29 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Creacion del carrito de compras (a falta de mas ajustes)
+// Creacion del carrito de compras (a falta de probarlo)
 let carrito = [];
-let total = 0;
 
 function agregarAlCarrito(paquete, precio) {
-    let itemEnCarrito = carrito.find(item => item.nombre === paquete);
-
-    if (itemEnCarrito) {
-        if (itemEnCarrito.cantidad < 3) {
-            itemEnCarrito.cantidad++;
-        } else {
-            alert("Solo puedes agregar un máximo de 3 unidades por paquete.");
-        }
-    } else {
-        if (carrito.length < 3) {
-            carrito.push({ nombre: paquete, cantidad: 1, precio: precio });
-        } else {
-            alert("No puedes agregar más de 3 paquetes diferentes.");
-        }
-    }
+    carrito.push({ paquete, precio });
     actualizarCarrito();
 }
 
 function actualizarCarrito() {
-    let carritoElemento = document.getElementById("carrito");
-    carritoElemento.innerHTML = "";
+    let carritoContenido = document.getElementById("carrito-contenido");
+    carritoContenido.innerHTML = "";
 
-    total = 0;
     carrito.forEach((item, index) => {
-        total += item.precio * item.cantidad;
-        carritoElemento.innerHTML += `
-            <div>
-                <p>${item.nombre} (x${item.cantidad}) - $${item.precio * item.cantidad} MXN</p>
-                <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
-            </div>
-        `;
+        let carritoItem = document.createElement("div");
+        carritoItem.innerHTML = `${item.paquete} - $${item.precio} MXN <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+        carritoContenido.appendChild(carritoItem);
     });
 
+    let total = carrito.reduce((sum, item) => sum + item.precio, 0);
     document.getElementById("total-carrito").innerText = `Total: $${total} MXN`;
 }
 
 function eliminarDelCarrito(index) {
-    carrito.splice(index, 1);
-    actualizarCarrito();
-}
-
-function eliminarTodoCarrito() {
-    carrito = [];
-    total = 0;
+    carrito.splice(index, 1); 
     actualizarCarrito();
 }
