@@ -1,4 +1,3 @@
-// Experimentación y pruebas con .js (sujeto a cambios en el futuro)
 document.addEventListener("DOMContentLoaded", function() {
     const botones = document.querySelectorAll(".ver-mas");
 
@@ -31,29 +30,48 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Creacion del carrito de compras (a falta de probarlo)
+// Creacion del carrito de compras (a falta de mas ajustes)
 let carrito = [];
 
-function agregarAlCarrito(paquete, precio) {
-    carrito.push({ paquete, precio });
+function agregarAlCarrito(paquete) {
+    let itemEnCarrito = carrito.find(item => item.nombre === paquete);
+
+    if(itemEnCarrito) {
+        if (itemEnCarrito.cantidad < 3) {
+            itemEnCarrito.cantidad++;
+        } else {
+            alert("Solo puedes agregar un máximo de 3 unidades por paquete.");
+        }
+    } else {
+        if (carrito.length < 3) {
+            carrito.push({ nombre: paquete, cantidad: 1 });
+        } else {
+            alert("No puedes agregar más de 3 paquetes diferentes.");
+        }
+    }
     actualizarCarrito();
 }
 
 function actualizarCarrito() {
-    let carritoContenido = document.getElementById("carrito-contenido");
-    carritoContenido.innerHTML = "";
+    let carritoElemento = document.getElementById("carrito");
+    carritoElemento.innerHTML = "";
 
-    carrito.forEach((item, index) => {
-        let carritoItem = document.createElement("div");
-        carritoItem.innerHTML = `${item.paquete} - $${item.precio} MXN <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
-        carritoContenido.appendChild(carritoItem);
+    carrito.forEach(item => {
+        carritoElemento.innerHTML += `<p>${item.nombre} (x${item.cantidad})</p>`;
     });
 
-    let total = carrito.reduce((sum, item) => sum + item.precio, 0);
+    let total = carrito.reduce((sum, item) => sum + item.cantidad * getPrecio(item.nombre), 0);
     document.getElementById("total-carrito").innerText = `Total: $${total} MXN`;
 }
 
-function eliminarDelCarrito(index) {
-    carrito.splice(index, 1); 
+function eliminarTodoCarrito() {
+    carrito = [];
     actualizarCarrito();
+}
+
+function getPrecio(nombrePaquete) {
+    if (nombrePaquete === 'Paquete Básico') return 4500;
+    if (nombrePaquete === 'Paquete Empresa') return 10500;
+    if (nombrePaquete === 'Paquete Premium') return 18000;
+    return 0;
 }

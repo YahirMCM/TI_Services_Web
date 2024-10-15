@@ -206,7 +206,7 @@ width: 100%;
     }
 }
 
-button.ver-mas {
+button.ver-mas, button.agregar-carrito {
     background-color: #6200ee;
     color: white;
     border: none;
@@ -218,6 +218,14 @@ button.ver-mas {
 
 button.ver-mas:hover {
     background-color: #3700b3;
+}
+
+button.agregar-carrito {
+    background-color: #ff6600;
+}
+
+button.agregar-carrito:hover {
+    background-color: #e65c00;
 }
 
 #paquetes img {
@@ -265,7 +273,6 @@ h1 {
     margin: 10px auto;
 }
 
-/* Carrito de compras (a falta de probarlo) */
 #carrito {
     position: fixed;
     top: 20px;
@@ -295,4 +302,22 @@ h1 {
     text-align: center;
     font-weight: bold;
     margin-top: 10px;
+}
+
+button.eliminar-todo {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button.eliminar-todo:hover {
+    background-color: #b30000;
 }
