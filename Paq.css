@@ -216,6 +216,14 @@ button.ver-mas {
     transition: background-color 0.3s ease;
 }
 
+button.agregar-carrito {
+    background-color: #ffcc00;
+}
+
+button.agregar-carrito:hover {
+    background-color: #e6b800;
+}
+
 button.ver-mas:hover {
     background-color: #3700b3;
 }
@@ -265,7 +273,7 @@ h1 {
     margin: 10px auto;
 }
 
-/* Carrito de compras (a falta de probarlo) */
+/* Carrito de compras (a falta de más modificaciones) */
 #carrito {
     position: fixed;
     top: 20px;

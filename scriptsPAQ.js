@@ -31,11 +31,25 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Creacion del carrito de compras (a falta de probarlo)
+// Creacion del carrito de compras (a falta de más modificaciones)
 let carrito = [];
 
 function agregarAlCarrito(paquete, precio) {
-    carrito.push({ paquete, precio });
+    let itemEnCarrito = carrito.find(item => item.paquete === paquete);
+
+    if (itemEnCarrito) {
+        if (itemEnCarrito.cantidad < 3) {
+            itemEnCarrito.cantidad++;
+        } else {
+            alert("Solo puedes agregar un máximo de 3 unidades por paquete.");
+        }
+    } else {
+        if (carrito.length < 3) {
+            carrito.push({ paquete, precio, cantidad: 1 });
+        } else {
+            alert("No puedes agregar más de 3 paquetes diferentes.");
+        }
+    }
     actualizarCarrito();
 }
 
@@ -45,15 +59,24 @@ function actualizarCarrito() {
 
     carrito.forEach((item, index) => {
         let carritoItem = document.createElement("div");
-        carritoItem.innerHTML = `${item.paquete} - $${item.precio} MXN <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+        carritoItem.innerHTML = `${item.paquete} (x${item.cantidad}) - $${item.precio * item.cantidad} MXN <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
         carritoContenido.appendChild(carritoItem);
     });
 
-    let total = carrito.reduce((sum, item) => sum + item.precio, 0);
+    let total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
     document.getElementById("total-carrito").innerText = `Total: $${total} MXN`;
 }
 
 function eliminarDelCarrito(index) {
-    carrito.splice(index, 1); 
+    let item = carrito[index];
+    item.cantidad--;
+    if (item.cantidad <= 0) {
+        carrito.splice(index, 1);
+    }
+    actualizarCarrito();
+}
+
+function eliminarTodoCarrito() {
+    carrito = [];
     actualizarCarrito();
 }
