@@ -32,11 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Creacion del carrito de compras (a falta de mas ajustes)
 let carrito = [];
+let total = 0;
 
-function agregarAlCarrito(paquete) {
+function agregarAlCarrito(paquete, precio) {
     let itemEnCarrito = carrito.find(item => item.nombre === paquete);
 
-    if(itemEnCarrito) {
+    if (itemEnCarrito) {
         if (itemEnCarrito.cantidad < 3) {
             itemEnCarrito.cantidad++;
         } else {
@@ -44,7 +45,7 @@ function agregarAlCarrito(paquete) {
         }
     } else {
         if (carrito.length < 3) {
-            carrito.push({ nombre: paquete, cantidad: 1 });
+            carrito.push({ nombre: paquete, cantidad: 1, precio: precio });
         } else {
             alert("No puedes agregar más de 3 paquetes diferentes.");
         }
@@ -56,22 +57,27 @@ function actualizarCarrito() {
     let carritoElemento = document.getElementById("carrito");
     carritoElemento.innerHTML = "";
 
-    carrito.forEach(item => {
-        carritoElemento.innerHTML += `<p>${item.nombre} (x${item.cantidad})</p>`;
+    total = 0;
+    carrito.forEach((item, index) => {
+        total += item.precio * item.cantidad;
+        carritoElemento.innerHTML += `
+            <div>
+                <p>${item.nombre} (x${item.cantidad}) - $${item.precio * item.cantidad} MXN</p>
+                <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
+            </div>
+        `;
     });
 
-    let total = carrito.reduce((sum, item) => sum + item.cantidad * getPrecio(item.nombre), 0);
     document.getElementById("total-carrito").innerText = `Total: $${total} MXN`;
+}
+
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
 }
 
 function eliminarTodoCarrito() {
     carrito = [];
+    total = 0;
     actualizarCarrito();
-}
-
-function getPrecio(nombrePaquete) {
-    if (nombrePaquete === 'Paquete Básico') return 4500;
-    if (nombrePaquete === 'Paquete Empresa') return 10500;
-    if (nombrePaquete === 'Paquete Premium') return 18000;
-    return 0;
 }
