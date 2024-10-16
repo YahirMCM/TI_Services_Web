@@ -8,9 +8,7 @@ li {
     font-size: 18px;
 }
 
-
-
-.encabezado{
+.encabezado {
     font-size: 80px;
     text-align: center;
 }
@@ -28,13 +26,13 @@ li {
 }
 
 menu {
-font-family: "Euclid Circular A", "Poppins";
-background: #12161f;
-color: white;
-margin: 0;
-height: fit-content;
-display: grid;
-place-items: center;
+    font-family: "Euclid Circular A", "Poppins";
+    background: #12161f;
+    color: white;
+    margin: 0;
+    height: fit-content;
+    display: grid;
+    place-items: center;
 }
 
 nav {
@@ -62,7 +60,6 @@ nav .item {
     text-align: center;
 }
 
-
 .dropdown {
     overflow: hidden;
     list-style: none;
@@ -72,6 +69,7 @@ nav .item {
     left: 0;
     top: 62px;
 }
+
 .dropdown > div {
     transform: translate(0, -100%);
     transition: all 0.5s 0.1s;
@@ -103,7 +101,6 @@ nav .item {
     z-index: 1;
     pointer-events: none;
     transition: 0.35s;
-
 }
 
 nav .item:hover > .dropdown > div {
@@ -130,90 +127,84 @@ nav .item:nth-child(5):hover ~ .underline {
     transform: translate(400%, 0);
 }
 
-
 body {
-margin: 0;
-background-color: #9cd1ff;
-font-family: "Euclid Circular A", "Poppins";
+    margin: 0;
+    background-color: #9cd1ff;
+    font-family: "Euclid Circular A", "Poppins";
 }
-  
-/* html,
-body {
-height: 100%;
-} */
 
 .background {
-position: absolute;
-z-index: -1;
-top: 0;
-left: 0;
-right: 0;
-bottom: 1;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 1;
 }
 
 ul {
-display: flex;
-list-style: none;
-padding: 0;
-margin: 0;
-gap: 20px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
 }
 
 .socials a {
-font-size: 24px;
+    font-size: 24px;
 }
 
 .links a {
-font-family: "Euclid Circular A", "Poppins";
-gap: 10px;
-color: #E8E8E8;
-text-decoration: wavy;
+    font-family: "Euclid Circular A", "Poppins";
+    gap: 10px;
+    color: #E8E8E8;
+    text-decoration: wavy;
 }
 
 .legal {
-font-size: 12px;
-margin: 0;
+    font-size: 12px;
+    margin: 0;
 }
 
 svg {
-position: bottom;
-top: 0;
-left: 0;
-width: 61.5%;
-height: 100%;
-transform: scaleY(2) scaleX(2.25);
-transform-origin: bottom;
-box-sizing: border-box;
-display: block;
-pointer-events: none;
+    position: bottom;
+    top: 0;
+    left: 0;
+    width: 61.5%;
+    height: 100%;
+    transform: scaleY(2) scaleX(2.25);
+    transform-origin: bottom;
+    box-sizing: border-box;
+    display: block;
+    pointer-events: none;
 }
 
 #footer {
-position: relative;
-left: 0;
-bottom: 0;
-display: flex;
-width: 100%;
-height: 480px;
-padding-left: 0;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: 480px;
+    padding-left: 0;
 }
 
 .foot {
-display: flex;
-flex-direction: column;
-justify-content: flex-end;
-gap: 30px;
-padding-bottom: 15px;
-padding-left: 60px;
-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 30px;
+    padding-bottom: 15px;
+    padding-left: 60px;
+    width: 100%;
 }
 
 @media (width > 420px) {
-section {
-    align-items: center;
-    padding-left: 0;
-    gap: 20px;
-}
+    section {
+        align-items: center;
+        padding-left: 0;
+        gap: 20px;
+    }
 
     .links {
         gap: 20px;
@@ -233,4 +224,68 @@ button.ver-mas {
 
 button.ver-mas:hover {
     background-color: #3700b3;
+}
+
+/* Código 1 añadido */
+#carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#carrito h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#carrito-contenido div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+#total-carrito {
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button.eliminar-todo {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button.eliminar-todo:hover {
+    background-color: #b30000;
+}
+
+button.agregar-carrito {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.agregar-carrito:hover {
+    background-color: #cc5200;
 }
