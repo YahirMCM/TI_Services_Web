@@ -1,11 +1,14 @@
 p {
     font-family: Arial;
     font-size: 20px;
+    text-align: center;
 }
 
 li {
     font-family: Arial;
     font-size: 18px;
+    display: inline-block;
+    margin: 0 10px;
 }
 
 .encabezado {
@@ -148,6 +151,26 @@ ul {
     padding: 0;
     margin: 0;
     gap: 20px;
+    text-align: center;
+}
+
+#productos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+article {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+#productos img {
+    display: block;
+    margin: 0 auto;
 }
 
 .socials a {
