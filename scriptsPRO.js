@@ -30,3 +30,52 @@ document.addEventListener("DOMContentLoaded", function() {
         descripcion.style.opacity = "0";
     });
 });
+
+let carrito = [];
+
+function agregarAlCarrito(producto, precio) {
+    let itemEnCarrito = carrito.find(item => item.producto === producto);
+
+    if (itemEnCarrito) {
+        if (itemEnCarrito.cantidad < 3) {
+            itemEnCarrito.cantidad++;
+        } else {
+            alert("Solo puedes agregar un máximo de 3 unidades por producto.");
+        }
+    } else {
+        if (carrito.length < 6) {
+            carrito.push({ producto, precio, cantidad: 1 });
+        } else {
+            alert("No puedes agregar más de 6 productos diferentes.");
+        }        
+    }
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    let carritoContenido = document.getElementById("carrito-contenido");
+    carritoContenido.innerHTML = "";
+
+    carrito.forEach((item, index) => {
+        let carritoItem = document.createElement("div");
+        carritoItem.innerHTML = `${item.producto} (x${item.cantidad}) - $${item.precio * item.cantidad} MXN <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+        carritoContenido.appendChild(carritoItem);
+    });
+
+    let total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+    document.getElementById("total-carrito").innerText = `Total: $${total} MXN`;
+}
+
+function eliminarDelCarrito(index) {
+    let item = carrito[index];
+    item.cantidad--;
+    if (item.cantidad <= 0) {
+        carrito.splice(index, 1);
+    }
+    actualizarCarrito();
+}
+
+function eliminarTodoCarrito() {
+    carrito = [];
+    actualizarCarrito();
+}

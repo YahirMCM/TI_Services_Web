@@ -86,6 +86,7 @@
                 <p><strong>Precio:</strong> $2,200 MXN/mes por 500 GB</p>
                 <p class="descripcion-adicional">Este servicio incluye almacenamiento seguro en la nube con acceso desde cualquier dispositivo, en cualquier lugar del mundo. Perfecto para empresas que requieren acceso rápido a sus datos y necesitan espacio de almacenamiento adicional según crecen. También incluye medidas de seguridad avanzadas para proteger la integridad de tus datos.</p>
                 <button class="ver-mas">Ver más detalles</button>
+                <button class="agregar-carrito" onclick="agregarAlCarrito('Servicios en la Nube', 2200)">Añadir al carrito</button>
             </article>
             
             <article id="seguridadRed">
@@ -99,6 +100,7 @@
                 <p><strong>Precio:</strong> $3,500 MXN/mes</p>
                 <p class="descripcion-adicional">Nuestro servicio de seguridad de red incluye un firewall adaptable a las necesidades de tu empresa. Se implementa un sistema de monitoreo 24/7 para protegerte de amenazas externas y garantizar el funcionamiento seguro de tu infraestructura tecnológica. Ideal para empresas que manejan información confidencial.</p>
                 <button class="ver-mas">Ver más detalles</button>
+                <button class="agregar-carrito" onclick="agregarAlCarrito('Seguridad de Red', 3500)">Añadir al carrito</button>
             </article>
 
             <article id="serviciosCE">
@@ -112,6 +114,7 @@
                 <p><strong>Precio:</strong> $1,500 MXN/mes (hasta 50 cuentas)</p>
                 <p class="descripcion-adicional">Este servicio de correo electrónico incluye la gestión de correos electrónicos corporativos con dominios personalizados. Garantizamos la disponibilidad y el soporte técnico 24/7 para asegurar que la comunicación de tu empresa sea fluida y segura.</p>
                 <button class="ver-mas">Ver más detalles</button>
+                <button class="agregar-carrito" onclick="agregarAlCarrito('Servicios de Correo Electrónico', 1500)">Añadir al carrito</button>
             </article>
 
             <article id="presentacionInfo">
@@ -125,6 +128,7 @@
                 <p><strong>Precio:</strong> $3,000 MXN/proyecto</p>
                 <p class="descripcion-adicional">Nuestro servicio de Power BI te permite crear tableros interactivos personalizados, proporcionando visualización y análisis de datos en tiempo real. Ideal para empresas que necesitan consolidar múltiples fuentes de datos y obtener insights precisos para mejorar la toma de decisiones.</p>
                 <button class="ver-mas">Ver más detalles</button>
+                <button class="agregar-carrito" onclick="agregarAlCarrito('Presentación de Información', 3000)">Añadir al carrito</button>
             </article>
 
             <article id="desarrolloSoftware">
@@ -138,6 +142,7 @@
                 <p><strong>Precio:</strong> Desde $12,000 MXN/proyecto</p>
                 <p class="descripcion-adicional">Creamos soluciones de software personalizadas, desde aplicaciones web hasta móviles, adaptadas a las necesidades de tu empresa. Nos encargamos del desarrollo completo, pruebas y soporte continuo para asegurar que tu software funcione de manera eficiente y escalable.</p>
                 <button class="ver-mas">Ver más detalles</button>
+                <button class="agregar-carrito" onclick="agregarAlCarrito('Desarrollo de Software', 12000)">Añadir al carrito</button>
             </article>
 
             <article id="mantenimientoHardware">
@@ -151,6 +156,7 @@
                 <p><strong>Precio:</strong> $1,000 MXN por equipo/mantenimiento</p>
                 <p class="descripcion-adicional">Ofrecemos servicios de mantenimiento tanto preventivo como correctivo, asegurando el rendimiento continuo de tu infraestructura tecnológica. Ideal para evitar fallos inesperados y prolongar la vida útil de tus equipos.</p>
                 <button class="ver-mas">Ver más detalles</button>
+                <button class="agregar-carrito" onclick="agregarAlCarrito('Mantenimiento de Hardware', 1000)">Añadir al carrito</button>
                 <br>
                 <br>
                 <br>
@@ -245,4 +251,10 @@
             </section>
         </div>
     </body>
+    <div id="carrito">
+      <h2>Carrito de Compras</h2>
+      <div id="carrito-contenido"></div>
+      <p id="total-carrito">Total: $0 MXN</p>
+      <button class="eliminar-todo" onclick="eliminarTodoCarrito()">Eliminar todo</button>
+    </div>    
 </html>
