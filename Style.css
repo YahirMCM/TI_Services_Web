@@ -335,3 +335,67 @@ button.agregar-carrito {
 button.agregar-carrito:hover {
     background-color: #cc5200;
 }
+
+/* Carrito */
+.carrito_compras {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff6f61;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  /* Estilo de barrita */
+  .carrito_barra {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    transition: 0.3s ease;
+    z-index: 999;
+  }
+  
+  .carrito_barra h2 {
+    margin-bottom: 20px;
+  }
+  
+  .carrito_barra p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .carrito_barra button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+  }
+
+  .carrito_barra.open {
+    right: 0;
+  }
+
+  .overlay.open {
+    display: block;
+  }
