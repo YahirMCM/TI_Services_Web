@@ -1,7 +1,8 @@
 p {
     font-family: Arial;
     font-size: 20px;
-    text-align: center;
+    text-align: justify;
+    padding: 20px 60px 20px 60px;
 }
 
 li {
@@ -18,6 +19,18 @@ li {
 
 .hindex {
     font-size: 40px;
+    padding: 0px 60px 0px 60px;
+}
+
+.hindex_1 {
+    font-size: 25px;
+    padding: 0px 60px 0px 60px;
+}
+
+.imgcenter{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .copyright {
