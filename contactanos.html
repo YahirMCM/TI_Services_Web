@@ -16,6 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
         rel="stylesheet"
     />
+        <link rel="stylesheet" href="cont.css">
         <link rel="stylesheet" href="Style.css">
         <script src="scriptsCONT.js"></script>
         <title>CONTÁCTANOS</title>
@@ -159,32 +160,30 @@
         </table>
         <br>
 
-        <section id="RegistroContacto">
-          <h2>¿DESEAS MAYOR INFORMACIÓN?</h2>
-          <h2>¡INGRESA TUS DATOS Y NOSOTROS TE CONTACTAREMOS!</h2>
-  
-          <form action="DatosContacto" method="post">
-  
-              <!-- Datos Personales -->
+          <section id="RegistroContacto">
+            <h2>¿DESEAS MAYOR INFORMACIÓN?</h2>
+            <h2>¡INGRESA TUS DATOS Y NOSOTROS TE CONTACTAREMOS!</h2>
+    
+            <form action="DatosContacto" method="post">
+    
               <fieldset>
                   <legend>Datos Personales</legend>
                   <div class="RegistroContacto">
                       <label for="name">Nombre:</label>
                       <input type="text" id="name" name="name" required placeholder="Ingresa tu nombre completo">
                   </div>
-  
+    
                   <div class="RegistroContacto">
                       <label for="email">Correo Electrónico:</label>
                       <input type="email" id="email" name="email" required placeholder="Ingresa tu correo electrónico">
                   </div>
-  
+    
                   <div class="RegistroContacto">
                       <label for="telefono">Número Telefónico:</label>
                       <input type="tel" id="telefono" name="telefono" required placeholder="Ingresa tu número telefónico">
                   </div>
               </fieldset>
-  
-              <!-- Preferencias de Contacto -->
+
               <fieldset>
                   <legend>Preferencias de Contacto</legend>
                   <div class="RegistroContacto">
@@ -195,14 +194,13 @@
                           <option value="whatsapp">WhatsApp</option>
                       </select>
                   </div>
-  
+    
                   <div class="RegistroContacto">
                       <label for="disponibilidad">¿Cuándo podemos contactarte?</label>
                       <input type="date" id="disponibilidad" name="disponibilidad">
                   </div>
               </fieldset>
-  
-              <!-- Sección de Persona u Organización -->
+
               <fieldset>
                   <legend>¿Eres un individuo o una organización?</legend>
                   <div class="RegistroContacto">
@@ -214,31 +212,31 @@
                       </select>
                   </div>
               </fieldset>
-  
-              <!-- Información de la Organización (oculta por defecto) -->
+    
+                <!-- INFORMACION DE ORGANIZACION OCULTA POR DEFECTO-->
               <fieldset id="Info_Org">
                   <legend>Datos de la Organización</legend>
-  
+    
                   <div class="RegistroContacto">
                       <label for="nombre_org">Nombre de la Organización:</label>
                       <input type="text" id="nombre_org" name="nombre_org" placeholder="Nombre de la organización">
                   </div>
-  
+    
                   <div class="RegistroContacto">
                       <label for="direccion_org">Dirección de la Organización:</label>
                       <input type="text" id="direccion_org" name="direccion_org" placeholder="Dirección">
                   </div>
-  
+    
                   <div class="RegistroContacto">
                       <label for="contacto_org">Nombre del Contacto Principal:</label>
                       <input type="text" id="contacto_org" name="contacto_org" placeholder="Nombre del contacto">
                   </div>
-  
+    
                   <div class="RegistroContacto">
                       <label for="sector_org">Sector al que pertenece la organización:</label>
                       <input type="text" id="sector_org" name="sector_org" placeholder="Ejemplo: Tecnología, Educación">
                   </div>
-  
+    
                   <div class="RegistroContacto">
                       <label for="tamaño_org">Tamaño de la organización:</label>
                       <select id="tamaño_org" name="tamaño_org">
@@ -248,13 +246,13 @@
                       </select>
                   </div>
               </fieldset>
-  
+    
               <div class="RegistroContacto">
                   <button type="submit">Enviar Registro</button>
               </div>
-  
-          </form>
-      </section>
+    
+            </form>
+          </section>
             
 
         <div id="footer">
