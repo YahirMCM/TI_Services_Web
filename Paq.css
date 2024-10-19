@@ -213,16 +213,22 @@ svg {
 
 #paquetes {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
 }
 
 article {
-    border: 1px solid #ddd;
+    width: 30%;
+    max-width: 400px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     padding: 20px;
     margin: 10px;
-    width: 300px;
-    text-align: center;
 }
 
 button {
@@ -254,11 +260,13 @@ button.agregar-carrito:hover {
 }
 
 #paquetes img {
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
-    width: 500px;
-    height: 150px;
+    border-radius: 10px;
 }
+
 
 h1 {
     text-align: center;
