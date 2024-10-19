@@ -173,7 +173,7 @@
             </section>
                         
         </section>
-        <script src="scriptsPRO.js"></script>
+        <script src="scriptCarrito.js"></script>
         <br>
         <br>
         <br>
@@ -258,10 +258,18 @@
             </section>
         </div>
     </body>
-    <div id="carrito">
-      <h2>Carrito de Compras</h2>
-      <div id="carrito-contenido"></div>
-      <p id="total-carrito">Total: $0 MXN</p>
-      <button class="eliminar-todo" onclick="eliminarTodoCarrito()">Eliminar todo</button>
-    </div>    
+    <!-- Botón flotante del carrito -->
+    <div class="carrito_compras" id="emoji_carrito">🛒</div>
+
+    <!-- Barra lateral del carrito -->
+    <div class="carrito_barra" id="barrita">
+        <h2>Carrito de Compras</h2>
+        <div id="carrito-contenido"></div>
+        <p id="total-carrito">Total: $0 MXN</p>
+        <button class="eliminar-todo" onclick="eliminarTodoCarrito()">Eliminar todo</button>
+        <button id="cerrar_carro">Cerrar</button>
+    </div>
+
+    <!-- Overlay para cerrar el carrito -->
+    <div class="overlay" id="capa_carro"></div>
 </html>
