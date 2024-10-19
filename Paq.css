@@ -345,3 +345,8 @@ button.eliminar-todo {
 button.eliminar-todo:hover {
     background-color: #b30000;
 }
+
+img {
+    display: block;
+    margin: 0 auto;
+}
