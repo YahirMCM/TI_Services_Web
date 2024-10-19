@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background-color: #9cd1ff;
-    font-family: "Euclid Circular A", "Poppins";
+    font-family: 'Poppins', 'Euclid Circular A', sans-serif;
 }
 
 p {
@@ -9,8 +9,12 @@ p {
     font-size: 20px;
 }
 
-.encabezado{
+.encabezado {
     font-size: 80px;
+    text-align: center;
+}
+
+h1, h2 {
     text-align: center;
 }
 
@@ -27,7 +31,7 @@ p {
 }
 
 menu {
-    font-family: "Euclid Circular A", "Poppins";
+    font-family: 'Euclid Circular A', 'Poppins';
     background: #12161f;
     color: white;
     margin: 0;
@@ -61,7 +65,6 @@ nav .item {
     text-align: center;
 }
 
-
 .dropdown {
     overflow: hidden;
     list-style: none;
@@ -71,6 +74,7 @@ nav .item {
     left: 0;
     top: 62px;
 }
+
 .dropdown > div {
     transform: translate(0, -100%);
     transition: all 0.5s 0.1s;
@@ -78,7 +82,7 @@ nav .item {
 }
 
 .dropdown a {
-    font-family: "Euclid Circular A", "Poppins";
+    font-family: 'Euclid Circular A', 'Poppins';
     display: block;
     padding: 0;
     width: 100%;
@@ -102,7 +106,6 @@ nav .item {
     z-index: 1;
     pointer-events: none;
     transition: 0.35s;
-
 }
 
 nav .item:hover > .dropdown > div {
@@ -129,7 +132,6 @@ nav .item:nth-child(5):hover ~ .underline {
     transform: translate(400%, 0);
 }
 
-
 .background {
     position: absolute;
     z-index: -1;
@@ -152,7 +154,7 @@ ul {
 }
 
 .links a {
-    font-family: "Euclid Circular A", "Poppins";
+    font-family: 'Euclid Circular A', 'Poppins';
     gap: 10px;
     color: #E8E8E8;
     text-decoration: wavy;
@@ -164,12 +166,12 @@ ul {
 }
 
 svg {
-    position: absolute;
+    position: bottom;
     top: 0;
     left: 0;
-    width: 110%;
-    height: 120%;
-    transform: scaleY(3) scaleX(2.25);
+    width: 61.5%;
+    height: 100%;
+    transform: scaleY(2) scaleX(2.25);
     transform-origin: bottom;
     box-sizing: border-box;
     display: block;
@@ -177,12 +179,13 @@ svg {
 }
 
 #footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     display: flex;
     width: 100%;
-    height: 300px;
+    height: 480px;
+    padding-left: 0;
 }
 
 .foot {
@@ -190,20 +193,160 @@ svg {
     flex-direction: column;
     justify-content: flex-end;
     gap: 30px;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     padding-left: 60px;
     width: 100%;
 }
 
 @media (width > 420px) {
-section {
-    align-items: center;
-    padding-left: 0;
-    gap: 20px;
-}
+    section {
+        align-items: center;
+        padding-left: 0;
+        gap: 20px;
+    }
 
     .links {
         gap: 20px;
         color: #F8F8F8;
     }
+}
+
+#paquetes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+article {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button.ver-mas, button.agregar-carrito {
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.ver-mas:hover {
+    background-color: #3700b3;
+}
+
+button.agregar-carrito {
+    background-color: #ff6600;
+}
+
+button.agregar-carrito:hover {
+    background-color: #cc5200;
+}
+
+#paquetes img {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    height: 150px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#introduccion p {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#paquetes ul {
+    text-align: center;
+    padding: 0;
+}
+
+#paquetes li {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#paquetes p,
+#paquetes button {
+    text-align: center;
+}
+
+#paquetes strong {
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+}
+
+#paquetes button.ver-mas {
+    display: block;
+    margin: 10px auto;
+}
+
+#carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#carrito h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#carrito-contenido div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+#total-carrito {
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button.eliminar-todo {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button.eliminar-todo:hover {
+    background-color: #b30000;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
 }
