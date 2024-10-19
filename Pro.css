@@ -219,11 +219,11 @@ svg {
 
 article {
     margin: 20px auto;
-    width: 80%; /* Ajusta según sea necesario */
+    width: 80%;
     max-width: 500px;
     text-align: center;
-    background-color: #ffffff; /* Fondo blanco para contraste */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
 }
