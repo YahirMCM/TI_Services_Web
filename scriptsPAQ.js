@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Creacion del carrito de compras (a falta de más modificaciones)
+// Creacion del carrito de compras (sujeto a cambios en el futuro)
 let carrito = [];
 
 function agregarAlCarrito(paquete, precio) {
