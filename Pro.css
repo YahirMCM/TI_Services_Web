@@ -218,11 +218,14 @@ svg {
 }
 
 article {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
+    margin: 20px auto;
+    width: 80%; /* Ajusta según sea necesario */
+    max-width: 500px;
     text-align: center;
+    background-color: #ffffff; /* Fondo blanco para contraste */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 10px;
+    padding: 20px;
 }
 
 button {
