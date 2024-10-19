@@ -1,3 +1,5 @@
+// ESTE DOCUMENTO ACTUALMENTE NO ESTA SIENDO UTILIZADO, PERO LO DEJAREMOS AQUI POR SI ACASO
+
 // Experimentación y pruebas con .js (sujeto a cambios en el futuro)
 document.addEventListener("DOMContentLoaded", function() {
     const botones = document.querySelectorAll(".ver-mas");
