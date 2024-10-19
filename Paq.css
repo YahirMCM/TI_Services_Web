@@ -112,26 +112,6 @@ nav .item:hover > .dropdown > div {
     transform: translate(0);
 }
 
-nav .item:nth-child(1):hover ~ .underline {
-    transform: translate(0, 0);
-}
-
-nav .item:nth-child(2):hover ~ .underline {
-    transform: translate(100%, 0);
-}
-
-nav .item:nth-child(3):hover ~ .underline {
-    transform: translate(200%, 0);
-}
-
-nav .item:nth-child(4):hover ~ .underline {
-    transform: translate(300%, 0);
-}
-
-nav .item:nth-child(5):hover ~ .underline {
-    transform: translate(400%, 0);
-}
-
 .background {
     position: absolute;
     z-index: -1;
@@ -265,41 +245,18 @@ button.agregar-carrito:hover {
     border-radius: 10px;
 }
 
-h1 {
+#mensaje-final {
+    margin: 50px auto;
+    padding: 40px;
+    max-width: 800px;
+    background-color: rgba(47, 103, 236, 0.1);
+    border-left: 5px solid #2f67ec;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     text-align: center;
-    font-size: 2.5em;
-}
-
-#introduccion p {
-    text-align: center;
-    font-size: 1.5em;
-}
-
-#paquetes ul {
-    text-align: center;
-    padding: 0;
-}
-
-#paquetes li {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-#paquetes p,
-#paquetes button {
-    text-align: center;
-}
-
-#paquetes strong {
-    text-align: center;
-    display: block;
-    margin: 10px 0;
-}
-
-#paquetes button.ver-mas {
-    display: block;
-    margin: 10px auto;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.8;
 }
 
 .carrito_compras {
@@ -320,7 +277,8 @@ h1 {
     top: 0;
     right: -100%;
     width: 300px;
-    height: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
     background-color: #333;
     color: white;
     padding: 20px;
@@ -329,7 +287,12 @@ h1 {
 }
 
 .carrito_barra h2 {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    padding-bottom: 10px;
     margin-bottom: 20px;
+    z-index: 1;
 }
 
 .carrito_barra p {
@@ -363,6 +326,7 @@ h1 {
 .overlay.open {
     display: block;
 }
+
 
 #mensaje-final {
     margin: 50px auto;

@@ -319,7 +319,8 @@ h1 {
     top: 0;
     right: -100%;
     width: 300px;
-    height: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
     background-color: #333;
     color: white;
     padding: 20px;
@@ -328,7 +329,14 @@ h1 {
 }
 
 .carrito_barra h2 {
-    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    z-index: 1;
+    padding-bottom: 10px;
 }
 
 .carrito_barra p {
