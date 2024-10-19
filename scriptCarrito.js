@@ -1,3 +1,5 @@
+// Este archivo JavaScript gestiona la interactividad del carrito de compras y la visualización de detalles de los productos. Permite mostrar u ocultar información adicional con transiciones suaves para mejorar la experiencia del usuario. Controla la apertura y cierre del carrito, la adición de productos con límites específicos, y utiliza localStorage para mantener los elementos añadidos al navegar entre páginas. Además, actualiza dinámicamente el total en pesos mexicanos y facilita la eliminación o limpieza del carrito. Por ahora, esta funcionalidad está disponible en `productos.html` y `paquetes.html`, sincronizando el estado del carrito entre ambas páginas.
+
 document.addEventListener("DOMContentLoaded", function () {
     const botones = document.querySelectorAll(".ver-mas");
 
@@ -29,31 +31,26 @@ document.addEventListener("DOMContentLoaded", function () {
         descripcion.style.opacity = "0";
     });
 
-    // Selección de elementos clave
     const carritoIcono = document.getElementById('emoji_carrito');
     const barraCarro = document.getElementById('barrita');
     const cerrarCarro = document.getElementById('cerrar_carro');
     const carritoOverlay = document.getElementById('capa_carro');
 
-    // Abrir la barra del carrito al hacer clic en el ícono
     carritoIcono.addEventListener('click', () => {
         barraCarro.classList.add('open');
         carritoOverlay.classList.add('open');
     });
 
-    // Cerrar la barra al hacer clic en el botón de cerrar
     cerrarCarro.addEventListener('click', () => {
         barraCarro.classList.remove('open');
         carritoOverlay.classList.remove('open');
     });
 
-    // Cerrar la barra al hacer clic fuera del carrito (overlay)
     carritoOverlay.addEventListener('click', () => {
         barraCarro.classList.remove('open');
         carritoOverlay.classList.remove('open');
     });
 
-    // Cargar el carrito desde localStorage
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     actualizarCarrito();
 
@@ -112,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 
-    // Exponer las funciones necesarias globalmente para poder acceder desde el HTML
     window.agregarAlCarrito = agregarAlCarrito;
     window.eliminarDelCarrito = eliminarDelCarrito;
     window.eliminarTodoCarrito = eliminarTodoCarrito;
