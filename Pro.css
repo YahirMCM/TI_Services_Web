@@ -257,7 +257,7 @@ button.agregar-carrito:hover {
     background-color: #cc5200;
 }
 
-#paquetes img {
+#productos img {
     display: block;
     margin: 0 auto;
     width: 500px;
@@ -274,29 +274,29 @@ h1 {
     font-size: 1.5em;
 }
 
-#paquetes ul {
+#productos ul {
     text-align: center;
     padding: 0;
 }
 
-#paquetes li {
+#productos li {
     text-align: center;
     font-weight: bold;
     font-size: 1.2em;
 }
 
-#paquetes p,
-#paquetes button {
+#productos p,
+#productos button {
     text-align: center;
 }
 
-#paquetes strong {
+#productos strong {
     text-align: center;
     display: block;
     margin: 10px 0;
 }
 
-#paquetes button.ver-mas {
+#productos button.ver-mas {
     display: block;
     margin: 10px auto;
 }
