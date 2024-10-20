@@ -18,6 +18,7 @@
     />
         <link rel="stylesheet" href="cont.css">
         <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href="carrito.css">
         <script src="scriptsCONT.js"></script>
         <title>CONTÁCTANOS</title>
     </head>
@@ -335,4 +336,14 @@
             </section>
         </div>
     </body>
+    <div class="carrito_compras" id="emoji_carrito">🛒</div>
+    <div class="carrito_barra" id="barrita">
+        <h2>Carrito de Compras</h2>
+        <div id="carrito-contenido"></div>
+        <p id="total-carrito">Total: $0 MXN</p>
+        <button class="eliminar-todo" onclick="eliminarTodoCarrito()">Eliminar todo</button>
+        <button id="cerrar_carro">Cerrar</button>
+    </div>
+    <div class="overlay" id="capa_carro"></div>
+    <script src="scriptCarrito.js"></script>
 </html>
