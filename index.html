@@ -19,6 +19,7 @@
       />
       <link rel="stylesheet" href="Style.css">
       <link rel="stylesheet" href="carrito.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
       <title>INICIO</title>
   </head>
   <menu>
@@ -193,6 +194,7 @@
         <div id="carrito-contenido"></div>
         <p id="total-carrito">Total: $0 MXN</p>
         <button class="eliminar-todo" onclick="eliminarTodoCarrito()">Eliminar todo</button>
+        <button id="generar-factura">Generar Factura</button>
         <button id="cerrar_carro">Cerrar</button>
     </div>
     <div class="overlay" id="capa_carro"></div>
