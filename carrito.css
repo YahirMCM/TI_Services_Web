@@ -2,7 +2,7 @@
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #ff6f61;
+    background-color: white;
     color: white;
     font-size: 24px;
     padding: 10px;
@@ -40,8 +40,8 @@
 }
 
 .carrito_barra button {
-    background-color: #ff6f61;
-    color: white;
+    background-color: whitesmoke;
+    color: black;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
