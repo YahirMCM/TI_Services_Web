@@ -447,3 +447,83 @@ button.agregar-carrito:hover {
 .image-grid img:hover {
     transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
+
+/* PARA AGREGAR INFORMACION DE CONTACTO */
+#RegistroContacto {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#RegistroContacto h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#RegistroContacto fieldset {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+#RegistroContacto legend {
+    font-weight: bold;
+    color: #444;
+    padding: 0 10px;
+}
+
+#RegistroContacto .RegistroContacto {
+    margin-bottom: 15px;
+}
+
+#RegistroContacto .RegistroContacto label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#RegistroContacto .RegistroContacto input,
+#RegistroContacto .RegistroContacto select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+#RegistroContacto .RegistroContacto input::placeholder {
+    color: #aaa;
+}
+
+#RegistroContacto button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+#RegistroContacto button:hover {
+    background-color: #218838;
+}
+
+#RegistroContacto #Info_Org {
+    display: none;
+}
+
+#RegistroContacto #Info_Org .RegistroContacto {
+    margin-bottom: 10px;
+}
