@@ -19,6 +19,7 @@
         />
         <link rel="stylesheet" href="Style.css">
         <link rel="stylesheet" href="carrito.css">
+        <link rel="stylesheet" href="nove.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
         <title>Novedades - Soluciones TI para Empresas</title>
     </head>
@@ -104,17 +105,48 @@
         </article>
     </section>
 
-    <section id="NuevosClientes">
-        <h2>Nuestros nuevos clientes</h2>
-        <p>Poseemos una amplia lista de clientes que gracias a nuestro esfuerzo y dedicacion pudimos satisfacer sus necesidades y otorgarles el servicio que ellos mismos necesitan, por eso mismo no nos detenemos y lo damos todo para seguir conociendo nuevos clientes y usuarios y poder brindarles nuestros servicios.</p>
-
-        <p>EMPRESA 1</p>
-        <p>Fecha de contratacion: 11/07/2024</p>
-        <img src="" alt="">
-        <br>
-        <p>EMPRESA 2</p>
-        <p>Fecha de contratacion: 21/4/2024</p>
-        <img src="" alt="">
+    <section id="proximos-clientes">
+      <h2>Próximos Clientes</h2>
+  
+      <!-- Cliente 1 -->
+      <div class="cliente">
+          <div class="logo">
+              <img src="img/novedades/BOEING.png" alt="BOEING">
+          </div>
+          <div class="info-cliente">
+              <h3>BOEING</h3>
+              <p>Boeing Aircraft es una de las principales compañías aeroespaciales y de defensa del mundo, con sede en Chicago, Illinois, aunque sus oficinas centrales han sido trasladadas recientemente a Arlington, Virginia, en los Estados Unidos. Fundada en 1916 por William Boeing, la empresa ha jugado un papel crucial en la evolución de la industria aeronáutica y aeroespacial durante más de un siglo.</p>
+          </div>
+          <div class="video-cliente">
+            <iframe 
+              class="youtube-video" 
+              data-src="https://www.youtube.com/embed/-OL7X9Ueds4?autoplay=1&mute=1&enablejsapi=1" 
+              allow="autoplay; encrypted-media" 
+              allowfullscreen>
+            </iframe>
+          </div>
+      </div>
+  
+      <!-- Cliente 2 -->
+      <div class="cliente">
+          <div class="logo">
+            <img src="img/" alt="EMPRESA 2">
+          </div>
+          <div class="info-cliente">
+            <h3>EMPRESA 2</h3>
+            <p>.</p>
+          </div>
+          <div class="video-cliente">
+            <iframe 
+              class="youtube-video" 
+              data-src="https://www.youtube.com/embed/-OL7X9Ueds4?autoplay=1&mute=1&enablejsapi=1" 
+              allow="autoplay; encrypted-media" 
+              allowfullscreen>
+            </iframe>
+          </div>
+      </div>
+    </section>
+</section>
 
     </section>
 
@@ -208,5 +240,8 @@
     <button id="cerrar_carro">Cerrar</button>
 </div>
 <div class="overlay" id="capa_carro"></div>
+
 <script src="scriptCarrito.js"></script>
+<script src="nove.js"></script>
+
 </html>

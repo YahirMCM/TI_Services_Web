@@ -1,0 +1,104 @@
+/* Estilo para la sección de próximos clientes */
+
+.cliente {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #f4f4f4;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    gap: 30px;
+}
+
+/* Estilo para el logo */
+.cliente .logo img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cliente .logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Información del cliente */
+.cliente .info-cliente {
+    flex: 1;
+}
+
+.cliente .info-cliente h3 {
+    margin: 0;
+    font-size: 28px;
+    color: #007BFF;
+}
+
+.cliente .info-cliente p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Estilo para el video */
+.video-cliente {
+    max-width: 600px;
+}
+
+.youtube-video {
+    width: 100%;
+    height: 340px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover en el video */
+.youtube-video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#proximos-clientes {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la sección de próximos clientes */
+#proximos-clientes {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+/* Título de "Próximos Clientes" */
+#proximos-clientes h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #007BFF, #00C6FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+#proximos-clientes h2:hover::after {
+    transform: scaleX(1);
+}
