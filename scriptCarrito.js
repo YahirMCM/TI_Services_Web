@@ -1,4 +1,4 @@
-// Script encargado de gestionar la interactividad de la página al permitir mostrar u ocultar detalles de productos, controlar la apertura y cierre del carrito de compras con almacenamiento persistente, y generar una factura en PDF basada en los productos añadidos al carrito.
+// Script encargado de gestionar la interactividad de la página al permitir mostrar u ocultar detalles de productos, controlar la apertura y cierre del carrito de compras con almacenamiento persistente, y redirigir a la página de facturación.
 
 document.addEventListener("DOMContentLoaded", function () {
     // Selección de elementos
@@ -113,48 +113,13 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 
-    // Evento para generar factura
+    // Redirigir a factura.html en lugar de generar el PDF directamente
     if (botonFactura) {
-        botonFactura.addEventListener("click", generarFactura);
-    }
-
-    function generarFactura() {
-        if (!window.jspdf || !window.jspdf.jsPDF) {
-            alert("Error: No se pudo cargar la librería jsPDF.");
-            return;
-        }
-
-        if (carrito.length === 0) {
-            alert("El carrito está vacío. No se puede generar factura.");
-            return;
-        }
-
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        let y = 20;
-
-        doc.setFontSize(22);
-        doc.text("Factura de Compra", 105, y, { align: "center" });
-        y += 10;
-
-        const fecha = new Date().toLocaleDateString();
-        doc.setFontSize(12);
-        doc.text(`Fecha: ${fecha}`, 10, y);
-        y += 10;
-
-        doc.setFontSize(16);
-        carrito.forEach((item, index) => {
-            const texto = `${index + 1}. ${item.producto} - Cantidad: ${item.cantidad} - Precio: $${item.precio * item.cantidad} MXN`;
-            doc.text(texto, 10, y);
-            y += 10;
+        botonFactura.addEventListener("click", () => {
+            const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+            localStorage.setItem('totalFactura', JSON.stringify(total));
+            window.location.href = "factura.html";
         });
-
-        const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
-        y += 10;
-        doc.setFontSize(18);
-        doc.text(`Total: $${total} MXN`, 10, y);
-
-        doc.save("Factura_DTT.pdf");
     }
 
     // Exponer funciones globalmente
