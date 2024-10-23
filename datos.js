@@ -1,72 +1,86 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const invoiceForm = document.getElementById('invoiceForm');
     const customerType = document.getElementById('customerType');
     const individualFields = document.getElementById('individualFields');
     const organizationFields = document.getElementById('organizationFields');
-    const itemsContainer = document.getElementById('items');
     const totalAmount = document.getElementById('totalAmount');
-    const addItemButton = document.getElementById('addItem');
+    const generatePdfButton = document.getElementById('generatePdf');
+    const itemsContainer = document.getElementById('items');
 
-    // Mostrar campos específicos según tipo de cliente
+    // Mostrar campos según tipo de cliente
     customerType.addEventListener('change', (event) => {
         const value = event.target.value;
-        if (value === 'individuo') {
-            individualFields.style.display = 'block';
-            organizationFields.style.display = 'none';
-        } else if (value === 'organizacion') {
-            organizationFields.style.display = 'block';
-            individualFields.style.display = 'none';
-        } else {
-            individualFields.style.display = 'none';
-            organizationFields.style.display = 'none';
-        }
+        individualFields.style.display = value === 'individuo' ? 'block' : 'none';
+        organizationFields.style.display = value === 'organizacion' ? 'block' : 'none';
     });
 
-    // Actualizar total dinámicamente
-    itemsContainer.addEventListener('input', updateTotal);
+    // Cargar productos desde el carrito
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    cargarProductos(carrito);
 
-    function updateTotal() {
+    function cargarProductos(carrito) {
         let total = 0;
-        const items = document.querySelectorAll('.item');
-
-        items.forEach(item => {
-            const quantity = item.querySelector('.quantity').value || 0;
-            const price = item.querySelector('.price').value || 0;
-            total += quantity * price;
+        carrito.forEach(item => {
+            const productRow = document.createElement('div');
+            productRow.classList.add('item');
+            productRow.innerHTML = `
+                <span>${item.producto} (x${item.cantidad})</span>
+                <span>$${item.precio * item.cantidad} MXN</span>
+            `;
+            itemsContainer.appendChild(productRow);
+            total += item.precio * item.cantidad;
         });
-
         totalAmount.textContent = total.toFixed(2);
     }
 
-    // Enviar la factura por correo
-    invoiceForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        const customerData = customerType.value === 'individuo' 
+    // Generar el PDF con los datos
+    generatePdfButton.addEventListener('click', () => {
+        const customerData = customerType.value === 'individuo'
             ? { type: 'Individuo', name: document.getElementById('name').value, dni: document.getElementById('dni').value }
             : { type: 'Organización', name: document.getElementById('orgName').value, taxId: document.getElementById('taxId').value };
 
         const email = document.getElementById('email').value;
-        const items = [];
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        let y = 20;
 
-        document.querySelectorAll('.item').forEach(item => {
-            const productName = item.querySelector('.product-name').value;
-            const quantity = item.querySelector('.quantity').value;
-            const price = item.querySelector('.price').value;
+        // Encabezado del PDF
+        doc.setFontSize(22);
+        doc.text("Factura de Compra", 105, y, { align: "center" });
+        y += 10;
 
-            items.push({ productName, quantity, price });
+        // Fecha
+        const fecha = new Date().toLocaleDateString();
+        doc.setFontSize(12);
+        doc.text(`Fecha: ${fecha}`, 10, y);
+        y += 10;
+
+        // Datos del cliente
+        doc.setFontSize(16);
+        doc.text(`Tipo de Cliente: ${customerData.type}`, 10, y);
+        y += 10;
+        doc.text(`Nombre: ${customerData.name}`, 10, y);
+        y += 10;
+        if (customerData.dni || customerData.taxId) {
+            doc.text(`RFC: ${customerData.dni || customerData.taxId}`, 10, y);
+            y += 10;
+        }
+        doc.text(`Correo: ${email}`, 10, y);
+        y += 10;
+
+        // Productos del carrito
+        doc.setFontSize(14);
+        carrito.forEach((item, index) => {
+            const text = `${index + 1}. ${item.producto} - Cantidad: ${item.cantidad} - $${item.precio * item.cantidad} MXN`;
+            doc.text(text, 10, y);
+            y += 10;
         });
 
-        const invoiceData = {
-            customer: customerData,
-            email,
-            items,
-            total: totalAmount.textContent
-        };
+        // Total
+        y += 10;
+        doc.setFontSize(16);
+        doc.text(`Total: $${totalAmount.textContent} MXN`, 10, y);
 
-        console.log('Datos de la factura:', invoiceData);
-        alert(`Factura enviada con éxito a ${email}`);
-
-        // Aquí meteremos si es que se hace, lo de el emailjs para que mande los correos electrónicos
+        // Descargar el PDF
+        doc.save("Factura_DTT.pdf");
     });
 });

@@ -19,7 +19,7 @@
                     <option value="organizacion">Organización</option>
                 </select>
             </div>
-
+        
             <div id="individualFields" class="conditional-fields" style="display: none;">
                 <div class="form-group">
                     <label for="name">Nombre del Cliente:</label>
@@ -27,10 +27,10 @@
                 </div>
                 <div class="form-group">
                     <label for="dni">RFC:</label>
-                    <input type="text" id="dni" name="dni" placeholder="DNI del Individuo">
+                    <input type="text" id="dni" name="dni" placeholder="RFC del Cliente">
                 </div>
             </div>
-
+        
             <div id="organizationFields" class="conditional-fields" style="display: none;">
                 <div class="form-group">
                     <label for="orgName">Nombre de la Organización:</label>
@@ -38,27 +38,28 @@
                 </div>
                 <div class="form-group">
                     <label for="taxId">RFC Persona Moral:</label>
-                    <input type="text" id="taxId" name="taxId" placeholder="ID Tributario de la Organización">
+                    <input type="text" id="taxId" name="taxId" placeholder="ID Tributario">
                 </div>
             </div>
-
+        
             <div class="form-group">
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" required placeholder="Correo del Cliente">
             </div>
-
+        
             <div id="items">
                 <h3>Elementos del Carrito</h3>
             </div>
-
+        
             <div class="form-group total">
                 <strong>Total: $<span id="totalAmount">0.00</span></strong>
             </div>
-
-            <button type="submit">Enviar Factura</button>
-        </form>
+        
+            <button type="button" id="generatePdf">Generar PDF</button>
+        </form>        
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="datos.js"></script>
 </body>
 </html>
