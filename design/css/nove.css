@@ -92,3 +92,77 @@
 #proximos-clientes h2:hover::after {
     transform: scaleX(1);
 }
+
+/* Estilo general para la sección de futuros productos */
+#futuros_productos {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título de la sección */
+#futuros_productos h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #007BFF, #00C6FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de productos */
+#futuros_productos .productos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilo para cada tarjeta de producto */
+#futuros_productos .producto-card {
+    width: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+/* Estilo de las imágenes */
+#futuros_productos .producto-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Estilo de los encabezados de productos */
+#futuros_productos .producto-card h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #007BFF;
+}
+
+/* Estilo del párrafo */
+#futuros_productos .producto-card p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Estilo para la fecha de lanzamiento */
+#futuros_productos .producto-card .lanzamiento {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Efecto hover en las tarjetas */
+#futuros_productos .producto-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
