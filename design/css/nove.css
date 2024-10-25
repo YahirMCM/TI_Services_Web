@@ -67,16 +67,6 @@
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para la sección de próximos clientes */
-#proximos-clientes {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center; 

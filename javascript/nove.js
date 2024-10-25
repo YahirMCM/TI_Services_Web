@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const iframes = document.querySelectorAll('.youtube-video');
 
     const observerOptions = {
-        root: null, // Usa el viewport del navegador
-        threshold: 0.5 // Al menos el 50% del video debe ser visible
+        root: null, // Usar el viewport como referencia
+        threshold: 0.5 // Al menos el 50% del iframe debe ser visible
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const iframe = entry.target;
 
             if (entry.isIntersecting) {
-                // Cargar el video solo cuando esté visible
+                // Asignar src para cargar el video solo si no está cargado
                 const videoSrc = iframe.getAttribute('data-src');
                 if (!iframe.src) {
-                    iframe.src = videoSrc; // Asignar src para que se reproduzca
+                    iframe.src = videoSrc;
                 }
             } else {
-                // Detener el video cuando salga de la pantalla
-                iframe.src = ''; // Limpiar src para detener la reproducción
+                // Pausar el video y limpiar src al salir de pantalla
+                iframe.src = ''; 
             }
         });
     }, observerOptions);
