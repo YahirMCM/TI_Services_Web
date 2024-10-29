@@ -527,3 +527,174 @@ button.agregar-carrito:hover {
 #RegistroContacto #Info_Org .RegistroContacto {
     margin-bottom: 10px;
 }
+
+/* CONTACTANOS MODIFICACION DEL MAPA ----------------------------------------------------------------------------------------------- */
+
+/* Sección de Ubicación */
+#ubicacion-empresa {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ubicacion-empresa:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Encabezado de la Sección */
+.ubicacion-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.ubicacion-header h2 {
+    font-size: 36px;
+    color: #007BFF;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ubicacion-header p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Diseño en dos columnas con alineación */
+.ubicacion-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Texto de Ubicación con centrado */
+.ubicacion-texto {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 25px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrado horizontal */
+    display: flex; /* Centrado vertical */
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ubicacion-texto h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.ubicacion-texto p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Contenedor del Mapa */
+.map-container {
+    flex: 2;
+    min-width: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.map-container:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Mapa Iframe */
+.mapa-iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+/* Header de la página de Contacto */
+.contact-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-header h1 {
+    font-size: 36px;
+    color: #007BFF;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-header p {
+    font-size: 18px;
+    color: #555;
+    margin: 0;
+}
+
+/* Sección de Contacto */
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+/* Listado de Contacto */
+.contact-list,
+.social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.contact-list li,
+.social-list li {
+    font-size: 18px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-list a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+/* Iconos */
+.contact-list i,
+.social-list i {
+    font-size: 24px;
+    color: #007BFF;
+}
