@@ -1,124 +1,29 @@
-/* Estilos para la página de Paquetes y Contactanos */
 body {
     margin: 0;
     background-color: #82B0D9;
     font-family: 'Poppins', 'Euclid Circular A', sans-serif;
 }
 
-.paquetes-header {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+p {
+    font-family: Arial;
+    font-size: 20px;
 }
 
-.paquetes-header h1 {
-    font-size: 36px;
-    color: #007BFF;
-    margin-bottom: 10px;
-}
-
-.paquetes-header p {
-    font-size: 18px;
-    color: #555;
-}
-
-/* Fondo blanco solo para la sección de paquetes */
-#paquetes {
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-article {
-    width: 300px;
-    max-width: 400px;
-    background-color: #ffffff;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
+.encabezado {
+    font-size: 80px;
     text-align: center;
 }
 
-.paquete h3 {
-    font-size: 24px;
-    color: #333;
-    margin-top: 10px;
-}
-
-.paquete ul {
-    list-style: none;
-    padding: 0;
-}
-
-.paquete ul li {
-    font-size: 16px;
-    color: #666;
-}
-
-button {
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-}
-
-button.ver-mas, button.agregar-carrito {
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
-}
-
-button.ver-mas {
-    background-color: #6200ee;
-}
-
-button.ver-mas:hover {
-    background-color: #3700b3;
-}
-
-button.agregar-carrito {
-    background-color: #ff6600;
-}
-
-button.agregar-carrito:hover {
-    background-color: #cc5200;
-}
-
-#paquetes img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
-}
-
-#mensaje-final {
-    background-color: rgba(47, 103, 236, 0.1);
-    border-left: 5px solid #2f67ec;
-    padding: 20px;
-    margin: 50px auto;
-    max-width: 800px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+h1, h2 {
     text-align: center;
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    font-size: 1.2em;
-    line-height: 1.8;
 }
 
-#mensaje-final p {
-    margin-bottom: 20px;
+.hindex {
+    font-size: 40px;
+}
+
+.copyright {
+    font-size: 14px;
 }
 
 :root {
@@ -284,4 +189,77 @@ svg {
         gap: 20px;
         color: #F8F8F8;
     }
+}
+
+#paquetes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+article {
+    width: 30%;
+    max-width: 400px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button.ver-mas, button.agregar-carrito {
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+button.ver-mas:hover {
+    background-color: #3700b3;
+}
+
+button.agregar-carrito {
+    background-color: #ff6600;
+}
+
+button.agregar-carrito:hover {
+    background-color: #cc5200;
+}
+
+#paquetes img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#mensaje-final {
+    margin: 50px auto;
+    padding: 40px;
+    max-width: 800px;
+    background-color: rgba(47, 103, 236, 0.1);
+    border-left: 5px solid #2f67ec;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.8;
+}
+
+#mensaje-final p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
