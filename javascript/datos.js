@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalAmount = document.getElementById('totalAmount');
     const generatePdfButton = document.getElementById('generatePdf');
     const itemsContainer = document.getElementById('items');
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+    cargarProductos(carrito);
 
     // Mostrar campos según tipo de cliente
     customerType.addEventListener('change', (event) => {
@@ -12,10 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         individualFields.style.display = value === 'individuo' ? 'block' : 'none';
         organizationFields.style.display = value === 'organizacion' ? 'block' : 'none';
     });
-
-    // Cargar productos desde el carrito
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    cargarProductos(carrito);
 
     function cargarProductos(carrito) {
         let total = 0;
@@ -32,13 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
         totalAmount.textContent = total.toFixed(2);
     }
 
-    // Generar el PDF con los datos
+    // Generar el PDF con datos condicionales del formulario
     generatePdfButton.addEventListener('click', () => {
-        const customerData = customerType.value === 'individuo'
-            ? { type: 'Individuo', name: document.getElementById('name').value, dni: document.getElementById('dni').value }
-            : { type: 'Organización', name: document.getElementById('orgName').value, taxId: document.getElementById('taxId').value };
-
-        const email = document.getElementById('email').value;
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
         let y = 20;
@@ -54,17 +48,49 @@ document.addEventListener('DOMContentLoaded', () => {
         doc.text(`Fecha: ${fecha}`, 10, y);
         y += 10;
 
-        // Datos del cliente
+        // Capturar datos del formulario según el tipo de cliente seleccionado
+        const customerTypeValue = customerType.value;
+        const customerData = {
+            type: customerTypeValue === 'individuo' ? 'Individuo' : 'Organización',
+            name: customerTypeValue === 'individuo' ? document.getElementById('name').value : document.getElementById('orgName').value,
+            dni: customerTypeValue === 'individuo' ? document.getElementById('dni').value : document.getElementById('taxId').value,
+            cpostal: document.getElementById('cpostal').value,
+            email: document.getElementById('email').value
+        };
+
+        // Datos del cliente en el PDF
         doc.setFontSize(16);
         doc.text(`Tipo de Cliente: ${customerData.type}`, 10, y);
         y += 10;
-        doc.text(`Nombre: ${customerData.name}`, 10, y);
-        y += 10;
-        if (customerData.dni || customerData.taxId) {
-            doc.text(`RFC: ${customerData.dni || customerData.taxId}`, 10, y);
+        
+        // Mostrar solo los campos específicos de Individuo u Organización
+        if (customerTypeValue === 'individuo') {
+            doc.text(`Nombre: ${customerData.name}`, 10, y);
             y += 10;
+
+            const apellidos = document.getElementById('apellidos').value;
+            if (apellidos) {
+                doc.text(`Apellidos: ${apellidos}`, 10, y);
+                y += 10;
+            }
+
+            if (customerData.dni) {
+                doc.text(`RFC: ${customerData.dni}`, 10, y);
+                y += 10;
+            }
+        } else if (customerTypeValue === 'organizacion') {
+            doc.text(`Nombre de la Organización: ${customerData.name}`, 10, y);
+            y += 10;
+
+            if (customerData.dni) {
+                doc.text(`RFC Persona Moral: ${customerData.dni}`, 10, y);
+                y += 10;
+            }
         }
-        doc.text(`Correo: ${email}`, 10, y);
+
+        doc.text(`Código Postal: ${customerData.cpostal}`, 10, y);
+        y += 10;
+        doc.text(`Correo Electrónico: ${customerData.email}`, 10, y);
         y += 10;
 
         // Productos del carrito
