@@ -54,8 +54,9 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 .item {

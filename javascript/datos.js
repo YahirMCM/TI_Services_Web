@@ -2,19 +2,65 @@ document.addEventListener('DOMContentLoaded', () => {
     const customerType = document.getElementById('customerType');
     const individualFields = document.getElementById('individualFields');
     const organizationFields = document.getElementById('organizationFields');
+    const commonFields = document.getElementById('commonFields'); 
     const totalAmount = document.getElementById('totalAmount');
     const generatePdfButton = document.getElementById('generatePdf');
     const itemsContainer = document.getElementById('items');
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    
-    cargarProductos(carrito);
 
-    // Mostrar campos según tipo de cliente
+    // Inicialmente deshabilitar el botón
+    generatePdfButton.disabled = true;
+
+    // Mostrar campos específicos según el tipo de cliente y verificar campos
     customerType.addEventListener('change', (event) => {
         const value = event.target.value;
+
         individualFields.style.display = value === 'individuo' ? 'block' : 'none';
         organizationFields.style.display = value === 'organizacion' ? 'block' : 'none';
+        commonFields.style.display = value ? 'block' : 'none';
+
+        actualizarEstadoBotonFactura(); // Verificar campos al seleccionar el tipo de cliente
     });
+
+    // Verificación en tiempo real de todos los campos del formulario
+    document.querySelectorAll('#invoiceForm input, #invoiceForm select').forEach((input) => {
+        input.addEventListener('input', actualizarEstadoBotonFactura);
+    });
+
+    function verificarCamposRequeridos() {
+        // Verificar campos comunes
+        const codigoPostal = document.getElementById('cpostal').value.trim();
+        const email = document.getElementById('email').value.trim();
+        if (!codigoPostal || !email) return false;
+
+        // Verificar campos específicos según el tipo de cliente
+        if (customerType.value === 'individuo') {
+            const nombre = document.getElementById('name').value.trim();
+            const apellidos = document.getElementById('apellidos').value.trim();
+            const dni = document.getElementById('dni').value.trim();
+            return nombre && apellidos && dni;
+        } else if (customerType.value === 'organizacion') {
+            const nombreOrg = document.getElementById('orgName').value.trim();
+            const rfc = document.getElementById('taxId').value.trim();
+            return nombreOrg && rfc;
+        }
+        return false;
+    }
+
+    function actualizarEstadoBotonFactura() {
+        if (verificarCamposRequeridos()) {
+            generatePdfButton.disabled = false;
+            generatePdfButton.style.backgroundColor = "#4CAF50";
+            generatePdfButton.onclick = null;
+        } else {
+            generatePdfButton.disabled = true;
+            generatePdfButton.style.backgroundColor = "grey";
+            generatePdfButton.onclick = () => alert("Para generar su factura, complete todos los campos requeridos.");
+        }
+    }
+
+    // Cargar productos desde el carrito
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    cargarProductos(carrito);
 
     function cargarProductos(carrito) {
         let total = 0;
@@ -31,8 +77,25 @@ document.addEventListener('DOMContentLoaded', () => {
         totalAmount.textContent = total.toFixed(2);
     }
 
-    // Generar el PDF con datos condicionales del formulario
+    // Generar el PDF con los datos
     generatePdfButton.addEventListener('click', () => {
+        if (generatePdfButton.disabled) return;
+
+        const customerData = customerType.value === 'individuo'
+            ? {
+                type: 'Individuo',
+                name: document.getElementById('name').value,
+                apellidos: document.getElementById('apellidos').value,
+                dni: document.getElementById('dni').value
+            }
+            : {
+                type: 'Organización',
+                name: document.getElementById('orgName').value,
+                taxId: document.getElementById('taxId').value
+            };
+
+        const postalCode = document.getElementById('cpostal').value;
+        const email = document.getElementById('email').value;
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
         let y = 20;
@@ -48,49 +111,26 @@ document.addEventListener('DOMContentLoaded', () => {
         doc.text(`Fecha: ${fecha}`, 10, y);
         y += 10;
 
-        // Capturar datos del formulario según el tipo de cliente seleccionado
-        const customerTypeValue = customerType.value;
-        const customerData = {
-            type: customerTypeValue === 'individuo' ? 'Individuo' : 'Organización',
-            name: customerTypeValue === 'individuo' ? document.getElementById('name').value : document.getElementById('orgName').value,
-            dni: customerTypeValue === 'individuo' ? document.getElementById('dni').value : document.getElementById('taxId').value,
-            cpostal: document.getElementById('cpostal').value,
-            email: document.getElementById('email').value
-        };
-
-        // Datos del cliente en el PDF
+        // Datos del cliente
         doc.setFontSize(16);
         doc.text(`Tipo de Cliente: ${customerData.type}`, 10, y);
         y += 10;
+        doc.text(`Nombre: ${customerData.name}`, 10, y);
+        y += 10;
         
-        // Mostrar solo los campos específicos de Individuo u Organización
-        if (customerTypeValue === 'individuo') {
-            doc.text(`Nombre: ${customerData.name}`, 10, y);
+        if (customerData.apellidos) {
+            doc.text(`Apellidos: ${customerData.apellidos}`, 10, y);
             y += 10;
-
-            const apellidos = document.getElementById('apellidos').value;
-            if (apellidos) {
-                doc.text(`Apellidos: ${apellidos}`, 10, y);
-                y += 10;
-            }
-
-            if (customerData.dni) {
-                doc.text(`RFC: ${customerData.dni}`, 10, y);
-                y += 10;
-            }
-        } else if (customerTypeValue === 'organizacion') {
-            doc.text(`Nombre de la Organización: ${customerData.name}`, 10, y);
-            y += 10;
-
-            if (customerData.dni) {
-                doc.text(`RFC Persona Moral: ${customerData.dni}`, 10, y);
-                y += 10;
-            }
         }
 
-        doc.text(`Código Postal: ${customerData.cpostal}`, 10, y);
+        if (customerData.dni || customerData.taxId) {
+            doc.text(`RFC: ${customerData.dni || customerData.taxId}`, 10, y);
+            y += 10;
+        }
+
+        doc.text(`Código Postal: ${postalCode}`, 10, y);
         y += 10;
-        doc.text(`Correo Electrónico: ${customerData.email}`, 10, y);
+        doc.text(`Correo: ${email}`, 10, y);
         y += 10;
 
         // Productos del carrito
