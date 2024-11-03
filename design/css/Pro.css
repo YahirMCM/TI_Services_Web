@@ -332,6 +332,28 @@ h1 {
     margin-bottom: 20px;
 }
 
+#aviso-advertencia {
+    align-items: flex-start;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 93%;
+    background-color: rgba(226, 217, 92, 0.1);
+    border-left: 3px solid #ff4800;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.85em;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.4;
+}
+
+#aviso-advertencia p:first-child {
+    font-weight: bold;
+    font-size: 0.95em;
+    color: #ff4800;
+    margin-bottom: 8px;
+}
+
 /* Inicia el logo */
 .logo-container {
     width: 144px;
