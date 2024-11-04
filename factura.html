@@ -127,18 +127,18 @@
     </script>
     <script type="text/javascript">
     (function(){
-        emailjs.init("JkWwo4bV0ZEyjS9C6"); // Reemplaza TU_ID_PUBLICO con tu Public Key de EmailJS
+        emailjs.init("JkWwo4bV0ZEyjS9C6"); 
     })();
     
-    // Configura el Service ID y Template ID
+    // Variables definidas
     const senderPdf = document.getElementById('sendpdf');
     const totalAmount = document.getElementById('totalAmount');
     const itemsContainer = document.getElementById('items');
     const customerType = document.getElementById('customerType');
-
+    // ID de servicio y plantilla
     const serviceID = 'service_m354r3d0nd4';
     const templateID = 'template_zoukpyn';
-
+    // Recupera los items de carrito
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     cargarProductos(carrito);
 
@@ -156,7 +156,7 @@
         });
         totalAmount.textContent = total.toFixed(2);
     }
-
+    // En el botón de enviar correo hace lo siguiente
     senderPdf.addEventListener('click', () => {
         event.preventDefault(); // Evita que se recargue la página
 
@@ -175,27 +175,31 @@
 
         const postalCode = document.getElementById('cpostal').value;
         const email = document.getElementById('email').value;
-
+        
+        // Generamos una variable para mandarlo como mensaje comenzando con el tipo de cliente
         let text = `Tipo de Cliente: ${customerData.type}\n`;
-
+        // Acá revisamos los rfc
         if (customerData.dni || customerData.taxId) {
             text += `RFC: ${customerData.dni || customerData.taxId}\nCódigo Postal: ${postalCode}\n`;
         }
 
+        // Por cada item dentro del carrito lo mete en el mensaje
         carrito.forEach((item, index) => {
             text += `${index + 1}. ${item.producto} - Cantidad: ${item.cantidad} - $${item.precio * item.cantidad} MXN\n`;
         });
 
+        // Total
         text += `Total: $${totalAmount.textContent} MXN`;
-
+        // Aquí generé el número de transacción
         const trans = Array.from({ length: 10 }, () => Math.floor(Math.random() * 10)).join('');
-
+        // Luego remplazar por nuestro número de cuenta o paypal donde depositar
         const noCuenta = "1234 5678 1234 5678";
 
         text += `\n\tNúmero de transacción: ${trans}\n\tRealizar pago a número de cuenta: ${noCuenta}`;
 
         const pdfNombre = `${customerData.name} ${customerData.apellidos}`;
 
+        // Esto de aquí hace la mágia como que no 🔥
         emailjs.send(serviceID, templateID, {
             user_name: pdfNombre,
             user_email: email,
