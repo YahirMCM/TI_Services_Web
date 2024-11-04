@@ -5,7 +5,7 @@ p {
     padding: 2% 8% 2% 8%; /* 20px 60px 20px 60px */
 }
 
-/* Inicia el logo */
+
 .logo-container {
     width: 144px;
     height: 144px;
@@ -13,7 +13,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra coqueta a ver si se ve */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .logo-container img {
@@ -22,7 +22,6 @@ p {
     object-fit: cover; 
 }
 
-/* Hasta acá llega el logo */
 
 li {
     font-family: Arial;
@@ -53,7 +52,7 @@ li {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%; /* Asegura que las imágenes no excedan el contenedor */
+    max-width: 100%; 
     height: auto;
 }
 
