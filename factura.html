@@ -183,6 +183,8 @@
             text += `RFC: ${customerData.dni || customerData.taxId}\nCódigo Postal: ${postalCode}\n`;
         }
 
+        text += "A continuación se muestra un resumen de la compra:\n";
+
         // Por cada item dentro del carrito lo mete en el mensaje
         carrito.forEach((item, index) => {
             text += `${index + 1}. ${item.producto} - Cantidad: ${item.cantidad} - $${item.precio * item.cantidad} MXN\n`;
