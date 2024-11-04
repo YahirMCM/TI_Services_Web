@@ -65,6 +65,7 @@
             </div>
         
             <button type="button" id="generatePdf">Generar PDF</button>
+            <button type="button" id="sendpdf">Enviar por correo</button>
         </form>        
     </div>
 
@@ -119,7 +120,95 @@
         </svg>
     </div>
     
+    
 
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("JkWwo4bV0ZEyjS9C6"); // Reemplaza TU_ID_PUBLICO con tu Public Key de EmailJS
+    })();
+    
+    // Configura el Service ID y Template ID
+    const senderPdf = document.getElementById('sendpdf');
+    const totalAmount = document.getElementById('totalAmount');
+    const itemsContainer = document.getElementById('items');
+    const customerType = document.getElementById('customerType');
+
+    const serviceID = 'service_m354r3d0nd4';
+    const templateID = 'template_zoukpyn';
+
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    cargarProductos(carrito);
+
+    function cargarProductos(carrito) {
+        let total = 0;
+        carrito.forEach(item => {
+            const productRow = document.createElement('div');
+            productRow.classList.add('item');
+            productRow.innerHTML = `
+                <span>${item.producto} (x${item.cantidad})</span>
+                <span>$${item.precio * item.cantidad} MXN</span>
+            `;
+            itemsContainer.appendChild(productRow);
+            total += item.precio * item.cantidad;
+        });
+        totalAmount.textContent = total.toFixed(2);
+    }
+
+    senderPdf.addEventListener('click', () => {
+        event.preventDefault(); // Evita que se recargue la página
+
+        const customerData = customerType.value === 'individuo'
+            ? {
+                type: 'Individuo',
+                name: document.getElementById('name').value,
+                apellidos: document.getElementById('apellidos').value,
+                dni: document.getElementById('dni').value
+            }
+            : {
+                type: 'Organización',
+                name: document.getElementById('orgName').value,
+                taxId: document.getElementById('taxId').value
+            };
+
+        const postalCode = document.getElementById('cpostal').value;
+        const email = document.getElementById('email').value;
+
+        let text = `Tipo de Cliente: ${customerData.type}\n`;
+
+        if (customerData.dni || customerData.taxId) {
+            text += `RFC: ${customerData.dni || customerData.taxId}\nCódigo Postal: ${postalCode}\n`;
+        }
+
+        carrito.forEach((item, index) => {
+            text += `${index + 1}. ${item.producto} - Cantidad: ${item.cantidad} - $${item.precio * item.cantidad} MXN\n`;
+        });
+
+        text += `Total: $${totalAmount.textContent} MXN`;
+
+        const trans = Array.from({ length: 10 }, () => Math.floor(Math.random() * 10)).join('');
+
+        const noCuenta = "1234 5678 1234 5678";
+
+        text += `\n\tNúmero de transacción: ${trans}\n\tRealizar pago a número de cuenta: ${noCuenta}`;
+
+        const pdfNombre = `${customerData.name} ${customerData.apellidos}`;
+
+        emailjs.send(serviceID, templateID, {
+            user_name: pdfNombre,
+            user_email: email,
+            message: text
+        })
+        .then(response => {
+            console.log("Correo enviado exitosamente", response.status, response.text);
+        })
+        .catch(error => {
+            console.error("Hubo un error al enviar el correo", error);
+        });
+    });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="javascript/datos.js"></script>
