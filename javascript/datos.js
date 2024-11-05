@@ -62,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     cargarProductos(carrito);
 
+
     function cargarProductos(carrito) {
+        itemsContainer.innerHTML = ""; // Limpia el contenedor de items antes de cargar productos
         let total = 0;
         carrito.forEach(item => {
             const productRow = document.createElement('div');
@@ -74,8 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
             itemsContainer.appendChild(productRow);
             total += item.precio * item.cantidad;
         });
-        totalAmount.textContent = total.toFixed(2);
+        totalAmount.textContent = total.toFixed(1);
     }
+    
 
     // Generar el PDF con los datos
     generatePdfButton.addEventListener('click', () => {
